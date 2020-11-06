@@ -963,9 +963,11 @@ textarea.form-control{
 	line-height: 50px;
 	text-align: center;
 }
+/*
 .social-media-1 li:first-child a{
   padding-left: 0 !important
 }
+*/
 .social-media-1 li:last-child a{
 	border-right: none;
   padding-right: 0 !important;
@@ -1083,7 +1085,7 @@ textarea.form-control{
   padding-right: 50px
 }
 .top-header .social-media-1 li a{
-  line-height: 70px
+  /*line-height: 70px*/
 }
 /* 13. Main Navbar Css
 =======================================================*/

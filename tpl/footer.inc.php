@@ -10,11 +10,7 @@
 			<div class="col-sm-8 col-md-8 col-lg-6">
 				<ul class="social-media-2 border-white large color-white-a float-right">
 					<li class="mr-20 color-white"><strong>Соцсети:</strong></li>
-					<li><a href="index-7.html#"><i class="fa fa-facebook"></i></a></li>
-					<li><a href="index-7.html#"><i class="fa fa-twitter"></i></a></li>
-					<li><a href="index-7.html#"><i class="fa fa-behance"></i></a></li>
-					<li><a href="index-7.html#"><i class="fa fa-instagram"></i></a></li>
-					<li><a href="index-7.html#"><i class="fa fa-linkedin"></i></a></li>
+					<wb-include wb-tpl="social.inc.php"/>
 				</ul>
 			</div>
 			<hr class="border-bottom-1 w-100 my-50">

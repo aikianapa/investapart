@@ -12,11 +12,7 @@
                 </div>
                 <div class="col-md-12 col-lg-3 col-xl-4">
                     <ul class="social-media-1 d-flex color-white-a float-right">
-                        <li><a href="index-7.html#"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="index-7.html#"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="index-7.html#"><i class="fa fa-behance"></i></a></li>
-                        <li><a href="index-7.html#"><i class="fa fa-instagram"></i></a></li>
-                        <li><a href="index-7.html#"><i class="fa fa-linkedin"></i></a></li>
+                        <wb-include wb-tpl="social.inc.php"/>
                     </ul>
                 </div>
             </div>
