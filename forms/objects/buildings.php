@@ -3,7 +3,7 @@
     <label class="col-6 col-sm-3 form-control-label">{{_lang.finish}}</label>
     <div class="col-6 col-sm-3">
       <label class="switch">
-        <input type="checkbox" name="finish">
+        <input wb-module="switch" name="finish">
         <span></span>
       </label>
     </div>
@@ -61,7 +61,7 @@
     </fieldset>
 
 </div>
-<script type="text/locale">
+<wb-lang>
 [en]
   finish = "Finish"
   type   = "Type"
@@ -86,4 +86,4 @@
   year = "Год"
   levels = "Этажность"
   sections = "Секций"
-</script>
+</wb-lang>
