@@ -31,18 +31,18 @@
               <input class="form-control search-header" type="search" placeholder="Поиск..." aria-label="Поиск..."
                data-ajax="{'target':'#{{_form}}List','filter_add':{'$or':[{ 'name': {'$like' : '$value'} }, { 'date': {'$like' : '$value'} }, { 'show.member': {'$like' : '$value'} }  ]} }">
 
-          <button class="btn btn-success" type="button" data-ajax="{'url':'/cms/ajax/form/{{_form}}/edit/_new','html':'.finance-edit-modal'}">Создать</button>
+          <button class="btn btn-success" type="button" data-ajax="{'url':'/cms/ajax/form/{{_form}}/edit/_new','html':'.{{_form}}-edit-modal'}">Создать</button>
         </form>
       </div>
     </nav>
 
 
     <div class="list-group m-2" id="{{_form}}List">
-      <wb-foreach data-ajax="{'url':'/ajax/form/finance/list/','size':'15','sort':'date:d','bind':'cms.list.finance','render':'client'}">
+      <wb-foreach data-ajax="{'url':'/ajax/form/{{_form}}/list/','size':'15','sort':'date:d','bind':'cms.list.{{_form}}','render':'client'}">
         <div class="list-group-item d-flex align-items-center">
 
             <div>
-              <a href="javascript:" data-ajax="{'url':'/cms/ajax/form/finance/edit/{{_id}}','html':'.finance-edit-modal','modal':'#{{_form}}ModalEdit'}"
+              <a href="javascript:" data-ajax="{'url':'/cms/ajax/form/{{_form}}/edit/{{_id}}','html':'.{{_form}}-edit-modal','modal':'#{{_form}}ModalEdit'}"
                 class="tx-13 tx-inverse mg-b-0">
                 <i class="ri-calendar-line"></i> {{date}}
                 <i class="ri-chat-2-line"></i> {{name}}
@@ -51,7 +51,7 @@
               </a>
             </div>
 
-          <a href="javascript:" data-ajax="{'url':'/cms/ajax/form/finance/edit/{{_id}}','html':'.finance-edit-modal'}"
+          <a href="javascript:" data-ajax="{'url':'/cms/ajax/form/{{_form}}/edit/{{_id}}','html':'.{{_form}}-edit-modal'}"
             class="pos-absolute r-40"><i class="ri-file-edit-line"></i></a>
           <div class="dropdown dropright pos-absolute r-10 p-0 m-0" style="line-height: normal;">
             <a href="javascript:" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
@@ -59,10 +59,10 @@
               <i class="ri-more-2-fill"></i>
             </a>
             <div class="dropdown-menu">
-              <a class="dropdown-item" href="#" data-ajax="{'url':'/cms/ajax/form/finance/edit/{{_id}}','html':'.finance-edit-modal'}">Изменить</a>
+              <a class="dropdown-item" href="#" data-ajax="{'url':'/cms/ajax/form/{{_form}}/edit/{{_id}}','html':'.{{_form}}-edit-modal'}">Изменить</a>
               <a class="dropdown-item" href="#">Переименовать</a>
               <a class="dropdown-item" href="javascript:"
-                 data-ajax="{'url':'/ajax/rmitem/{{_form}}/{{_id}}','update':'cms.list.finance','html':'.finance-edit-modal'}">Удалить</a>
+                 data-ajax="{'url':'/ajax/rmitem/{{_form}}/{{_id}}','update':'cms.list.{{_form}}','html':'.{{_form}}-edit-modal'}">Удалить</a>
             </div>
           </div>
         </div>
@@ -95,6 +95,6 @@
 
 
 </div>
-<div class="finance-edit-modal"></div>
+<div class="{{_form}}-edit-modal"></div>
 
 </html>
