@@ -66,7 +66,7 @@
                           </tr>
                       </thead>
                       <tbody id="{{_form}}List">
-                      <wb-foreach wb="table={{_form}}&size={{_sett.page_size}}&sort=id">
+                      <wb-foreach wb="table={{_form}}&size=2&pos=bottom&sort=id&bind=cms.list.{{_form}}">
                           <tr data-watcher="item={{id}}&watcher=#{{_form}}List">
                               <td class="nowrap">
                               <wb-data wb="table=objects&item={{object}}">
