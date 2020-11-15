@@ -54,7 +54,7 @@
               <div class="form-group row">
                 <label class="col-sm-3 form-control-label">{{_lang.district}}</label>
                 <div class="col-sm-9">
-                  <select wb-tree="item=city&branch=districts&parent=false&children=false&change=#{{_form}}EditForm [name=metro]" placeholder="{{_lang.district}}"
+                  <select wb-tree="item=city&branch=districts&parent=false&children=false" wb-change="#{{_form}}EditForm [name=metro]" placeholder="{{_lang.district}}"
                     name="district" class="form-control">
                     <option value="{{id}}">{{name}}</option>
                   </select>
