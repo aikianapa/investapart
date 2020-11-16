@@ -13,7 +13,7 @@
 
                     <fieldset class="form-group">
                       <label for="">{{_lang.district}}</label>
-                      <select wb-tree="item=city&branch=districts&parent=false&children=false" wb-change="#{{_form}}FilterForm [name=objects]" placeholder="{{_lang.district}}" name="district" class="form-control">
+                      <select wb-tree="item=city&branch=districts&parent=false&children=false" wb-change="#{{_form}}FilterForm [name=object]" placeholder="{{_lang.district}}..." name="district" class="form-control">
                         <option value="{{id}}">{{name}}</option>
                       </select>
                     </fieldset>
@@ -22,8 +22,8 @@
 
                     <fieldset class="form-group">
                       <label for="">{{_lang.objects}}</label>
-                      <select placeholder="{{_lang.objects}}" wb-change="#{{_form}}FilterForm [name=building]" name="objects" class="form-control" placeholder="{{_lang.objects}}">
-                        <wb-foreach wb="table=objects" wb-filter='{"district":"%value%","active":"on"}' >
+                      <select wb-change="#{{_form}}FilterForm [name=building]" name="object" class="form-control" placeholder="{{_lang.objects}}...">
+                        <wb-foreach wb="table=objects" wb-filter='{"district":"%value%","active":"on"}' wb-strict="true">
                           <option value="{{id}}">{{name}}</option>
                         </wb-foreach>
                       </select>
@@ -32,22 +32,22 @@
                     <fieldset class="form-group">
                       <label for="">{{_lang.building}}</label>
                       <select wb-tree="form=objects&item=%value%&field=buildings" name="building"
-                              class="form-control" placeholder="{{_lang.building}}">
+                              class="form-control" placeholder="{{_lang.building}}...">
                         <option value="{{id}}" data-sections="{{data.sections}}">{{name}}</option>
                       </select>
                     </fieldset>
 
                     <fieldset class="form-group">
                       <label for="">{{_lang.type}}</label>
-                      <select wb-tree="item=types&branch=units&parent=false" placeholder="{{_lang.type}}"
+                      <select wb-tree="item=types&branch=units&parent=false" placeholder="{{_lang.type}}..."
                         name="type" class="form-control">
                         <option value="{{id}}">{{name}}</option>
                       </select>
                     </fieldset>
 
-                    <div class="btn-group" role="group" aria-label="Button group">
-                      <button type="button" class="btn btn-primary mr-3" data-watcher="filter=#{{_form}}ListFiltered&tpl=false">{{_lang.get_list}}</button>
-                      <button type="button" class="btn btn-secondary"  data-watcher="filter=#{{_form}}ListFiltered&tpl=false&clear=true">{{_lang.clear}}</button>
+                    <div class="btn-group w-100" role="group" aria-label="Button group">
+                      <button type="button" class="btn btn-secondary"  wb-change="filter=#{{_form}}FilterForm&target=#{{_form}}List&clear=true"><i class="fa fa-ban mr-2"></i>{{_lang.clear}}</button>
+                      <button type="button" class="btn btn-primary" wb-change="filter=#{{_form}}FilterForm&target=#{{_form}}List"><i class="fa fa-search mr-2"></i>{{_lang.get_list}}</button>
                     </div>
                 </form>
               </div>
@@ -66,7 +66,7 @@
                           </tr>
                       </thead>
                       <tbody id="{{_form}}List">
-                      <wb-foreach wb="table={{_form}}&size=2&pos=bottom&sort=id&bind=cms.list.{{_form}}">
+                      <wb-foreach wb="table={{_form}}&size={{_sett.page_size}}&sort=id&bind=cms.list.{{_form}}">
                           <tr data-watcher="item={{id}}&watcher=#{{_form}}List">
                               <td class="nowrap">
                               <wb-data wb="table=objects&item={{object}}">
@@ -131,7 +131,7 @@
   finish = "Finish"
   objects = "Complex"
   building = "Building"
-  get_list = "Get list"
+  get_list = "Apply"
   clear = "Clear"
 [ru]
   title		= "Список квартир"
@@ -147,7 +147,7 @@
   price = "Цена"
   objects = "Комплекс"
   building = "Корпус"
-  get_list = "Показать"
+  get_list = "Применить"
   clear = "Сбросить"
 </wb-lang>
 </html>

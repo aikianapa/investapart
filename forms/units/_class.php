@@ -5,6 +5,11 @@ use Adbar\Dot;
 class unitsClass extends cmsFormsClass
 {
 
+function afterItemRead(&$Item) {
+    $Item['district'] = wbCorrelation('objects', $Item['object'], 'district');
+    return $Item;
+}
+
 function beforeItemShow(&$Item)
 {
     $Item["image"] = wbGetItemImg($Item);
