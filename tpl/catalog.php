@@ -43,42 +43,72 @@
     <section class="bg-light">
         <div class="container">
             <div class="row">
-
                 <div class="col-md-12 col-lg-12">
-                    <form class="adbanced-form-two amenities-list border-top-1-gray" id="catalogFilter">
+                    <div class="top-filter pb-15">
+
                         <div class="row">
-                            <div class="form-group col-lg-4 col-md-6 col-12 pt-15">
-                                <div class="select-wrapper position-relative">
-                                    <select wb-tree="item=city&branch=districts&parent=false&children=false&sort=name"
-                                        wb-change="#catalogFilter [name=metro]" placeholder="Район..." name="district"
-                                        class="form-control has-val">
-                                        <option value="{{id}}" data-district="{{id}}">{{name}}</option>
-                                    </select>
-                                </div>
+                            <div class="col-12">
+                                <ul class="nav nav-tabs border-0 navbar-tab-view mt-sm-15" id="myTab" role="tablist"
+                                    style="line-height: 20px;">
+                                    <li class="nav-item w-50">
+                                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home"
+                                            role="tab" aria-controls="home" aria-selected="true"><i
+                                                class="fa fa-th-large" aria-hidden="true"></i> Апарт-отели</a>
+                                    </li>
+                                    <li class="nav-item w-50">
+                                        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact"
+                                            role="tab" aria-controls="contact" aria-selected="false"><i class="fa fa-th"
+                                                aria-hidden="true"></i> Апартаменты</a>
+                                    </li>
+                                </ul>
                             </div>
-                            <div class="form-group col-lg-4 col-md-6 col-6 pt-15">
-                                <div class="select-wrapper position-relative">
-                                    <select
-                                        wb-tree="item=city&branch=districts->%district%&parent=false&children=false&sort=name"
-                                        wb-strict="false" placeholder="Метро..." name="metro"
-                                        class="form-control has-val">
-                                        <option value="{{id}}" data-metro="{{id}}" data-district='%district%'>{{name}}
-                                        </option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div class=" col-lg-4 col-md-6 col-6 pt-15">
-                                <button type="button" class="btn btn-primary d-table mx-auto w-100" wb-change="filter=#catalogFilter&target=#CatalogList">Показать</button>
-                            </div>
-
                         </div>
-                    </form>
+                    </div>
                 </div>
+
                 <div class="col-md-12 col-lg-12">
-                    <div class="border-top-1-gray" id="myTabContent">
+                    <div class="tab-content  border-top-1-gray" id="myTabContent">
+                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <div class="row">
+                                <div class="col-md-12 col-lg-12">
+                                    <form class="adbanced-form-two amenities-list border-bottom-1-gray"
+                                        id="catalogFilter">
+                                        <div class="row">
+                                            <div class="form-group col-lg-4 col-md-6 col-12 pt-15">
+                                                <div class="select-wrapper position-relative">
+                                                    <select
+                                                        wb-tree="item=city&branch=districts&parent=false&children=false&sort=name"
+                                                        wb-change="#catalogFilter [name=metro]" placeholder="Район..."
+                                                        name="district" class="form-control has-val">
+                                                        <option value="{{id}}" data-district="{{id}}">{{name}}</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-lg-4 col-md-6 col-6 pt-15">
+                                                <div class="select-wrapper position-relative">
+                                                    <select
+                                                        wb-tree="item=city&branch=districts->%district%&parent=false&children=false&sort=name"
+                                                        wb-strict="false" placeholder="Метро..." name="metro"
+                                                        class="form-control has-val">
+                                                        <option value="{{id}}" data-metro="{{id}}"
+                                                            data-district='%district%'>{{name}}
+                                                        </option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class=" col-lg-4 col-md-6 col-6 pt-15">
+                                                <button type="button" class="btn btn-primary d-table mx-auto w-100"
+                                                    wb-change="filter=#catalogFilter&target=#CatalogList">Показать</button>
+                                            </div>
+
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
                             <div class="row" id="CatalogList">
-                                <wb-foreach wb='table=objects&size={{_sett.page_size}}&sort=name&bind=site.CatalogList'>
+                                <wb-foreach wb='table=objects&size={{_sett.page_size}}&sort=name&bind=site.CatalogList'
+                                    wb-filter="{'active':'on'}">
                                     <div class="col-md-12 col-lg-6 col-xl-4">
                                         <div class="property-thumbnail mt-30">
                                             <div
@@ -100,27 +130,35 @@
                                                                     aria-hidden="true"></i></a>
                                                         </li>
                                                     </ul>
-                                                    <div class="hover-content py-30 px-20 overlay-hover-gradient">
-                                                        <div class="thumbnail-title z-index-1 position-relative">
-                                                            <span
-                                                                class="thumbnail-price bg-white color-secondary px-15 mb-10 d-table">
-                                                                {{quart}} квартал {{year}}</span>
-                                                            <a class="color-secondary mb-5" href="single-property.html">
+                                                    <a class="color-secondary mb-5"
+                                                        href="/object/{{id}}/{{wbFurlGenerate({{name}})}}/">
+                                                        <div class="hover-content py-30 px-20 overlay-hover-gradient">
+
+                                                            <div class="thumbnail-title z-index-1 position-relative">
+                                                                <span
+                                                                    class="thumbnail-price bg-white color-secondary px-15 mb-10 d-table">
+                                                                    {{quart}} квартал {{year}}</span>
+
                                                                 <h4>{{name}}</h4>
-                                                            </a>
-                                                            <span class="address icon-primary f-14"><i
-                                                                    class="fa fa-map-marker"></i>{{address}}&nbsp;</span>
+
+                                                                <span class="address icon-primary f-14"><i
+                                                                        class="fa fa-map-marker"></i>{{address}}&nbsp;</span>
+                                                            </div>
+
+                                                            <ul
+                                                                class="about-property icon-primary d-table f-14 z-index-1 position-relative">
+                                                                <li
+                                                                    wb-tree="item=city&branch={{district}}&children=false">
+                                                                    <i class="fa fa-map-o"
+                                                                        aria-hidden="true"></i><span>{{name}}</span>
+                                                                </li>
+                                                                <li wb-tree="item=city&branch={{metro}}&children=false">
+                                                                    <i class="fa fa-subway"
+                                                                        aria-hidden="true"></i><span>{{name}}</span>
+                                                                </li>
+                                                            </ul>
                                                         </div>
-                                                        <ul
-                                                            class="about-property icon-primary d-table f-14 z-index-1 position-relative">
-                                                            <li wb-tree="item=city&branch={{district}}&children=false">
-                                                                <i class="fa fa-map-o"
-                                                                    aria-hidden="true"></i><span>{{name}}</span></li>
-                                                            <li wb-tree="item=city&branch={{metro}}&children=false"><i
-                                                                    class="fa fa-subway"
-                                                                    aria-hidden="true"></i><span>{{name}}</span></li>
-                                                        </ul>
-                                                    </div>
+                                                    </a>
                                                 </div>
                                             </div>
                                         </div>
@@ -128,6 +166,109 @@
 
                                 </wb-foreach>
                             </div>
+                        </div>
+                        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                                <div class="row">
+                                    <div class="col-md-12 col-lg-12">
+                                        <form class="adbanced-form-two amenities-list border-bottom-1-gray"
+                                            id="apartFilter">
+                                            <div class="row">
+                                                <div class="form-group col-lg-4 col-md-6 col-12 pt-15">
+                                                    <div class="select-wrapper position-relative">
+                                                        <select
+                                                            wb-tree="item=city&branch=districts&parent=false&children=false&sort=name"
+                                                            wb-change="#catalogFilter [name=metro]"
+                                                            placeholder="Район..." name="district"
+                                                            class="form-control has-val">
+                                                            <option value="{{id}}" data-district="{{id}}">{{name}}
+                                                            </option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group col-lg-4 col-md-6 col-6 pt-15">
+                                                    <div class="select-wrapper position-relative">
+                                                        <select
+                                                            wb-tree="item=city&branch=districts->%district%&parent=false&children=false&sort=name"
+                                                            wb-strict="false" placeholder="Метро..." name="metro"
+                                                            class="form-control has-val">
+                                                            <option value="{{id}}" data-metro="{{id}}"
+                                                                data-district='%district%'>{{name}}
+                                                            </option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                <div class=" col-lg-4 col-md-6 col-6 pt-15">
+                                                    <button type="button" class="btn btn-primary d-table mx-auto w-100"
+                                                        wb-change="filter=#apartFilter&target=#ApartList">Показать</button>
+                                                </div>
+
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            <div class="row" id="ApartList">
+                                <wb-foreach wb='table=units&size={{_sett.page_size}}&sort=name&bind=site.ApartList'
+                                    wb-filter="{'active':'on'}">
+                                    <div class="col-md-12 col-lg-6 col-xl-4">
+                                        <div class="property-thumbnail mt-30">
+                                            <div
+                                                class="property-img position-relative overflow-hidden overlay-secondary-4">
+                                                <img src="tpl/images/property/7.jpg" alt="image">
+                                                <div class="thumbnail-content z-index-1 color-white-a color-white">
+                                                    <span
+                                                        class="thum-category category-1 bg-secondary color-white z-index-1 px-15">For
+                                                        Sale</span>
+                                                    <ul class="hover-option position-absolute icon-white z-index-1">
+                                                        <li>
+                                                            <a data-toggle="tooltip" data-placement="top"
+                                                                title="Wishlist" href="#"><i class="fa fa-heart-o"
+                                                                    aria-hidden="true"></i></a>
+                                                        </li>
+                                                        <li>
+                                                            <a data-toggle="tooltip" data-placement="top"
+                                                                title="Compare" href="#"><i class="fa fa-random"
+                                                                    aria-hidden="true"></i></a>
+                                                        </li>
+                                                    </ul>
+                                                    <a class="color-secondary mb-5"
+                                                        href="/object/{{id}}/{{wbFurlGenerate({{name}})}}/">
+                                                        <div class="hover-content py-30 px-20 overlay-hover-gradient">
+
+                                                            <div class="thumbnail-title z-index-1 position-relative">
+                                                                <span
+                                                                    class="thumbnail-price bg-white color-secondary px-15 mb-10 d-table">
+                                                                    {{quart}} квартал {{year}}</span>
+
+                                                                <h4>{{name}}</h4>
+
+                                                                <span class="address icon-primary f-14"><i
+                                                                        class="fa fa-map-marker"></i>{{address}}&nbsp;</span>
+                                                            </div>
+
+                                                            <ul
+                                                                class="about-property icon-primary d-table f-14 z-index-1 position-relative">
+                                                                <li
+                                                                    wb-tree="item=city&branch={{district}}&children=false">
+                                                                    <i class="fa fa-map-o"
+                                                                        aria-hidden="true"></i><span>{{name}}</span>
+                                                                </li>
+                                                                <li wb-tree="item=city&branch={{metro}}&children=false">
+                                                                    <i class="fa fa-subway"
+                                                                        aria-hidden="true"></i><span>{{name}}</span>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </wb-foreach>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
