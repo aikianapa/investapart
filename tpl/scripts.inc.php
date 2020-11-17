@@ -1,5 +1,9 @@
 <html>
-  <script src="{{_var.base}}/js/jquery-v3.4.1.js"></script>
+
+<script src="/engine/js/jquery.min.js"></script>
+<script src="/engine/js/wbapp.js"></script>
+
+
   <script src="{{_var.base}}/js/greensock.js"></script>
   <script src="{{_var.base}}/js/layerslider.transitions.js"></script>
   <script src="{{_var.base}}/js/layerslider.kreaturamedia.jquery.js"></script>

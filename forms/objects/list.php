@@ -43,7 +43,7 @@
                     <fieldset class="form-group">
                         <label for="">{{_lang.district}}</label>
                         <select wb-tree="item=city&branch=districts&parent=false&children=false&sort=name"
-                            wb-change="#{{_form}}FilterForm [name=metro],#{{_form}}FilterForm [name=object]"
+                            wb-change="#{{_form}}FilterForm [name=metro]"
                             placeholder="{{_lang.district}}..." name="district" class="form-control">
                             <option value="{{id}}" data-district="{{id}}">{{name}}</option>
                         </select>
@@ -52,8 +52,7 @@
                     <fieldset class="form-group">
                         <label for="">{{_lang.metro}}</label>
                         <select wb-tree="item=city&branch=districts->%district%&parent=false&children=false&sort=name"
-                            wb-strict="false" wb-change="#{{_form}}FilterForm [name=object]"
-                            placeholder="{{_lang.metro}}..." name="metro" class="form-control">
+                            wb-strict="false" placeholder="{{_lang.metro}}..." name="metro" class="form-control">
                             <option value="{{id}}" data-metro="{{id}}" data-district='%district%'>{{name}}</option>
                         </select>
                     </fieldset>

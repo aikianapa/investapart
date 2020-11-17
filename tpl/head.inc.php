@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="{{_var.base}}/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{_var.base}}/css/style.css">
     <link rel="stylesheet" href="{{_var.base}}/css/color.css">
+    <link rel="stylesheet" href="{{_var.base}}/css/custom.css">
     <link rel="stylesheet" href="{{_var.base}}/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{_var.base}}/css/layerslider.css">
     <link rel="stylesheet" href="{{_var.base}}/css/owl.carousel.min.css">
