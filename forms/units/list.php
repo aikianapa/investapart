@@ -1,16 +1,39 @@
 <html>
-<div class="list-group m-2">
-    <h5 class="element-header">
-                     {{_lang.title}}
-                     <button class="btn btn-sm btn-success pull-right" data-ajax="{'url':'/cms/ajax/form/{{_form}}/edit/_new','html':'.{{_form}}-edit-modal'}">
-                       <i class="fa fa-plus"></i> {{_lang.add}}
-                     </button>
-    </h5>
+    <nav class="nav navbar navbar-expand-md col p-3">
+      <a class="navbar-brand tx-bold tx-spacing--2 order-1" href="javascript:">{{_lang.title}}</a>
+      <button class="navbar-toggler order-2" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="wd-20 ht-20 fa fa-ellipsis-v"></i>
+      </button>
+
+      <div class="collapse navbar-collapse order-2" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="#" data-ajax="{'target':'#{{_form}}List','filter': 'clear'}">Все
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-ajax="{'target':'#{{_form}}List','filter_remove': 'active','filter_add':{'active':'on'}}">Активные</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-ajax="{'target':'#{{_form}}List','filter_remove': 'active','filter_add':{ 'active': '' } }">Архивные</a>
+          </li>
+        </ul>
+        <form class="form-inline mg-t-10 mg-lg-0">
+              <input class="form-control search-header" type="search" placeholder="Поиск..." aria-label="Поиск..."
+               data-ajax="{'target':'#{{_form}}List','filter_add':{'$or':[{ 'name': {'$like' : '$value'} }, { 'metro': {'$like' : '$value'} }, { 'district': {'$like' : '$value'} }  ]} }">
+
+          <button class="btn btn-success" type="button" data-ajax="{'url':'/cms/ajax/form/{{_form}}/edit/_new','html':'.{{_form}}-edit-modal'}">Создать</button>
+        </form>
+      </div>
+    </nav>
+
+<div class="list-group p-3">
     <div class="element-box mt-3">
         <div class="row">
-              <div class="col-sm-3">
-                <form id="{{_form}}FilterForm" class="form-horizontal" role="form">
-
+              <div class="col-sm-3 thead-light p-3">
+                <form id="{{_form}}FilterForm" class="form-horizontal" role="form" tx-13>
                     <fieldset class="form-group">
                       <label for="">{{_lang.district}}</label>
                       <select wb-tree="item=city&branch=districts&parent=false&children=false&sort=name" wb-change="#{{_form}}FilterForm [name=metro],#{{_form}}FilterForm [name=object]" placeholder="{{_lang.district}}..." name="district" class="form-control">
@@ -59,7 +82,7 @@
               </div>
               <div class="col-sm-9">
                 <div class="table-responsive" id="{{_form}}ListFiltered">
-                  <table class="table table-lightborder tx-14">
+                  <table class="table table-lightborder tx-13">
                       <thead class="thead-light">
                           <tr>
                               <th>{{_lang.name}}</th>
