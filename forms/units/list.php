@@ -13,17 +13,23 @@
 
                     <fieldset class="form-group">
                       <label for="">{{_lang.district}}</label>
-                      <select wb-tree="item=city&branch=districts&parent=false&children=false" wb-change="#{{_form}}FilterForm [name=object]" placeholder="{{_lang.district}}..." name="district" class="form-control">
-                        <option value="{{id}}">{{name}}</option>
+                      <select wb-tree="item=city&branch=districts&parent=false&children=false&sort=name" wb-change="#{{_form}}FilterForm [name=metro],#{{_form}}FilterForm [name=object]" placeholder="{{_lang.district}}..." name="district" class="form-control">
+                        <option value="{{id}}" data-district="{{id}}">{{name}}</option>
                       </select>
                     </fieldset>
 
+                    <fieldset class="form-group">
+                      <label for="">{{_lang.metro}}</label>
+                      <select wb-tree="item=city&branch=districts->%district%&parent=false&children=false&sort=name" wb-strict="false" wb-change="#{{_form}}FilterForm [name=object]" placeholder="{{_lang.metro}}..." name="metro" class="form-control">
+                        <option value="{{id}}" data-metro="{{id}}" data-district='%district%'>{{name}}</option>
+                      </select>
+                    </fieldset>
 
 
                     <fieldset class="form-group">
                       <label for="">{{_lang.objects}}</label>
                       <select wb-change="#{{_form}}FilterForm [name=building]" name="object" class="form-control" placeholder="{{_lang.objects}}...">
-                        <wb-foreach wb="table=objects" wb-filter='{"district":"%value%","active":"on"}' wb-strict="true">
+                        <wb-foreach wb="table=objects" wb-filter='{"district":"%district%","metro":"%metro%","active":"on"}' wb-strict="false">
                           <option value="{{id}}">{{name}}</option>
                         </wb-foreach>
                       </select>
@@ -121,6 +127,7 @@
   title		= "Units list"
 	name            = "Name"
 	type		= "Type"
+  metro = "Metro"
 	visible		= "Visible"
   district = "District"
 	action		= "action"
@@ -137,6 +144,7 @@
   title		= "Список квартир"
 	name    = "Наименование ЖК"
 	type		= "Тип"
+  metro = "Метро"
 	visible		= "Отображать"
   district = "Район"
 	action		= "Действие"

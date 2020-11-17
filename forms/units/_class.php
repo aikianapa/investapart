@@ -7,6 +7,7 @@ class unitsClass extends cmsFormsClass
 
 function afterItemRead(&$Item) {
     $Item['district'] = wbCorrelation('objects', $Item['object'], 'district');
+    $Item['metro'] = wbCorrelation('objects', $Item['object'], 'metro');
     return $Item;
 }
 
