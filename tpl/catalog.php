@@ -12,7 +12,7 @@
 
     <wb-include wb="tpl=header.inc.php" />
 
-    <div class="page-banner overlay-black" style="padding: 150px 0; background-image:url({{images.0.img}});">
+    <div class="page-banner overlay-black" style="padding: 150px 0; background-image:url(/thumb/1920x400/src{{images.0.img}});">
         <div class="container h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-lg-12">
@@ -97,19 +97,19 @@
                                             </div>
 
                                             <div class=" col-lg-4 col-md-6 col-6 pt-15">
-                                                <button type="button" class="btn btn-primary d-table mx-auto w-100" wb-change="filter=#catalogFilter&target=#CatalogList">Показать</button>
+                                                <button type="button" class="btn btn-primary d-table mx-auto w-100" wb-change="filter=#catalogFilter&target=#catalogList">Показать</button>
                                             </div>
 
                                         </div>
                                     </form>
                                 </div>
                             </div>
-                            <div class="row" id="CatalogList">
-                                <wb-foreach wb='table=objects&size={{_sett.page_size}}&sort=name&bind=site.CatalogList' wb-filter="{'active':'on'}">
+                            <div class="row" id="catalogList">
+                                <wb-foreach wb='table=objects&size={{_sett.page_size}}&sort=name&bind=site.catalogList' wb-filter="{'active':'on'}">
                                     <div class="col-md-12 col-lg-6 col-xl-4">
                                         <div class="property-thumbnail mt-30">
                                             <div class="property-img position-relative overflow-hidden overlay-secondary-4">
-                                                <img src="tpl/images/property/7.jpg" alt="image">
+                                                <img src="/thumbc/725x635/src/{{images.0.img}}" alt="name">
                                                 <div class="thumbnail-content z-index-1 color-white-a color-white">
                                                     <span class="thum-category category-1 bg-secondary color-white z-index-1 px-15">For Sale
                                                     </span>
@@ -212,7 +212,7 @@
                                     <div class="col-md-12 col-lg-6 col-xl-4">
                                         <div class="property-thumbnail mt-30">
                                             <div class="property-img position-relative overflow-hidden overlay-secondary-4">
-                                                <img src="tpl/images/property/7.jpg" alt="image">
+                                                <img src="/thumbc/725x635/src/{{images.0.img}}" alt="name">
                                                 <div class="thumbnail-content z-index-1 color-white-a color-white">
                                                     <span class="thum-category category-1 bg-secondary color-white z-index-1 px-15">
                                                         {{square}} кв.м.
