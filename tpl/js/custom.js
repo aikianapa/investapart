@@ -605,11 +605,14 @@
 		if (range[0] == '') range[0] = 0;
 		if (range[1] == undefined) range[1] = range[0];
 		let dim = $(this).attr('dimension');
+		let step = $(this).attr('step');
+		if (step == undefined) step = 1;
+
 		$(this).slider({
 			from: range[0]*1,
 			to: range[1]*1,
-			step: 1,
-			smooth: true,
+			step: step,
+			smooth: 1,
 			round: 0,
 			dimension: dim,
 			skin: "plastic"
