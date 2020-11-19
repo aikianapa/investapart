@@ -107,7 +107,7 @@
                                                     <div class="price-filter" wb-data="table=admin&item=complex_data">
                                                         <wb-data wb='table=admin&item=complex_data'>
                                                             <span>
-                                                                <input class="filter_range" type="text" name="square__minmax" dimension="&nbsp;кв.м" value="{{square_min}}; {{square_max}}"
+                                                                <input class="filter_range" type="text" name="square__minmax" dimension="&nbsp;кв.м" value="{{intval({{square_min}})}}; {{intval({{square_max}})}}"
                                                                 />
                                                             </span>
                                                         </wb-data>
@@ -120,7 +120,7 @@
                                                     <div class="price-filter" wb-data="table=admin&item=complex_data">
                                                         <wb-data wb='table=admin&item=complex_data'>
                                                             <span>
-                                                                <input class="filter_range" type="text" name="price__minmax" dimension="&nbsp;₽" step="10000" value="{{price_min}}; {{price_max}}" />
+                                                                <input class="filter_range" type="text" name="price__minmax" dimension="&nbsp;₽" step="10000" value="{{intval({{price_min}})}}; {{intval({{price_max}})}}" />
                                                             </span>
                                                         </wb-data>
                                                     </div>
@@ -250,7 +250,7 @@
                                                     <div class="price-filter" wb-data="table=admin&item=complex_data">
                                                         <wb-data wb='table=admin&item=complex_data'>
                                                             <span>
-                                                                <input class="filter_range" type="text" name="square__range" dimension="&nbsp;кв.м" value="{{square_min}}; {{square_max}}"
+                                                                <input class="filter_range" type="text" name="square__range" dimension="&nbsp;кв.м" value="{{intval({{square_min}})}}; {{intval({{square_max}})}}"
                                                                 />
                                                             </span>
                                                         </wb-data>
@@ -263,7 +263,7 @@
                                                     <div class="price-filter" wb-data="table=admin&item=complex_data">
                                                         <wb-data wb='table=admin&item=complex_data'>
                                                             <span>
-                                                                <input class="filter_range" type="text" name="price__range" dimension="&nbsp;₽" step="10000" value="{{price_min}}; {{price_max}}"
+                                                                <input class="filter_range" type="text" name="price__range" dimension="&nbsp;₽" step="10000" value="{{intval({{price_min}})}}; {{intval({{price_max}})}}"
                                                                 />
                                                             </span>
                                                         </wb-data>
