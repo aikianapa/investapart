@@ -1,6 +1,6 @@
 <html>
-<div class="modal fade effect-scale show removable" data-backdrop="static" id="{{_form}}ModalEdit" tabindex="-1"
-    role="dialog" aria-hidden="true">
+<div class="modal fade effect-scale show removable" data-backdrop="static" id="{{_form}}ModalEdit" tabindex="-1" role="dialog"
+    aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -11,8 +11,7 @@
             </div>
             <div class="modal-body">
 
-                <form id="{{_form}}EditForm" data-wb-form="{{_form}}" data-wb-item="{{_item}}" class="form-horizontal"
-                    role="form">
+                <form id="{{_form}}EditForm" class="form-horizontal" role="form">
 
                     <div class="form-group row">
                         <label class="col-6 col-sm-3 form-control-label">Отображать</label>
@@ -27,19 +26,18 @@
                     <div class="form-group row">
                         <label class="col-6 col-sm-3 form-control-label">{{_lang.complex}}</label>
                         <div class="col-6 col-sm-3">
-                            <select placeholder="{{_lang.complex}}" name="object" class="form-control"
-                                wb-change='#{{_form}}EditForm [name=building]' require>
-                                <wb-foreach wb="table=objects" wb-filter='{"active":"on"}'>
-                                <option value="{{id}}">{{name}}</option>
+                            <select placeholder="{{_lang.complex}}" name="object" class="form-control" wb-change='#{{_form}}EditForm [name=building]'
+                                require>
+                                <wb-foreach wb="table=objects">
+                                    <option value="{{id}}">{{name}} <b wb-if='"{{active}}"==""'>×</b></option>
                                 </wb-foreach>
                             </select>
                         </div>
 
                         <label class="col-6 col-sm-3 form-control-label">{{_lang.building}}</label>
                         <div class="col-6 col-sm-3">
-                            <select wb-tree="table=objects&item=%value%&field=buildings"
-                                name="building" class="form-control" placeholder="{{_lang.building}}" required
-                                wb-change='#{{_form}}EditForm [name=section]'>
+                            <select wb-tree="table=objects&item=%value%&field=buildings" name="building" class="form-control" placeholder="{{_lang.building}}"
+                                required wb-change='#{{_form}}EditForm [name=section]'>
                                 <option value="{{id}}" data-sections="{{data.sections}}">{{name}}</option>
                             </select>
                         </div>
@@ -48,8 +46,7 @@
                     <div class="form-group row">
                         <label class="col-6 col-sm-3 form-control-label">{{_lang.type}}</label>
                         <div class="col-6 col-sm-3">
-                            <select wb-tree="item=types&branch=units&parent=false" required
-                                placeholder="{{_lang.type}}" name="type" class="form-control">
+                            <select wb-tree="item=types&branch=units&parent=false" required placeholder="{{_lang.type}}" name="type" class="form-control">
                                 <option value="{{id}}">{{name}}</option>
                             </select>
                         </div>
@@ -58,7 +55,7 @@
                         <div class="col-6 col-sm-3">
                             <select name="section" class="form-control">
                                 <wb-foreach wb="count=%sections%">
-                                <option value="{{id}}">{{id}}</option>
+                                    <option value="{{id}}">{{id}}</option>
                                 </wb-foreach>
                             </select>
                         </div>
@@ -67,8 +64,7 @@
                     <div class="form-group row">
                         <label class="col-6 col-sm-3 form-control-label">{{_lang.square}}</label>
                         <div class="col-6 col-sm-3">
-                            <input type="number" class="form-control" name="square" step="0.01"
-                                placeholder="{{_lang.square}}">
+                            <input type="number" class="form-control" name="square" step="0.01" placeholder="{{_lang.square}}">
                         </div>
                         <label class="col-6 col-sm-3 form-control-label">{{_lang.price}}</label>
                         <div class="col-6 col-sm-3">
@@ -121,7 +117,6 @@
         </div>
     </div>
 </div>
-
 <wb-lang>
     [en]
     title = "Edit Unit"
@@ -143,6 +138,6 @@
     complex = "Комплекс"
     building = "Корпус"
 
-    </wb-langt>
+</wb-lang>
 
 </html>

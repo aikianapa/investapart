@@ -95,6 +95,46 @@
               </div>
 
               <div class="form-group row">
+                <label class="col-sm-3 form-control-label">Цена</label>
+                <div class="col-5 col-sm-3">
+                  <div class="input-group">
+                    <div class="input-group-prepend" style="cursor:alias;">
+                      <span class="input-group-text">от</span>
+                    </div>
+                    <input type="number" class="form-control" name="price_min" readonly>
+                  </div>
+                </div>
+                <div class="col-7 col-sm-3">
+                  <div class="input-group">
+                    <div class="input-group-prepend" style="cursor:alias;">
+                      <span class="input-group-text">до</span>
+                    </div>
+                    <input type="number" class="form-control" name="price_max" readonly>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <label class="col-sm-3 form-control-label">Площадь</label>
+                <div class="col-5 col-sm-3">
+                  <div class="input-group">
+                    <div class="input-group-prepend" style="cursor:alias;">
+                      <span class="input-group-text">от</span>
+                    </div>
+                    <input type="number" class="form-control" name="square_min" readonly>
+                  </div>
+                </div>
+                <div class="col-7 col-sm-3">
+                  <div class="input-group">
+                    <div class="input-group-prepend" style="cursor:alias;">
+                      <span class="input-group-text">до</span>
+                    </div>
+                    <input type="number" class="form-control" name="square_max" readonly>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group row">
                 <label class="col-sm-3 form-control-label">{{_lang.levels}}</label>
                 <div class="col-6 col-sm-3">
                   <div class="input-group">

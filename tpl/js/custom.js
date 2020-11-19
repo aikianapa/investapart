@@ -600,6 +600,22 @@
 	   skin: "plastic" 
 	});
 
+	$('.filter_range').each(function(){
+		let range = $(this).val().split(';');
+		if (range[0] == '') range[0] = 0;
+		if (range[1] == undefined) range[1] = range[0];
+		let dim = $(this).attr('dimension');
+		$(this).slider({
+			from: range[0]*1,
+			to: range[1]*1,
+			step: 1,
+			smooth: true,
+			round: 0,
+			dimension: dim,
+			skin: "plastic"
+		});
+	})
+
 	//  Star Rating Creator
 	//----------------------------------------------------------------------------------
 	function ratingEnable() {

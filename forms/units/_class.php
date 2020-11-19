@@ -1,83 +1,94 @@
 <?php
 
 use Adbar\Dot;
+use Nahid\JsonQ\Jsonq;
 
 class unitsClass extends cmsFormsClass
 {
-
-function afterItemRead(&$Item) {
-    $Item['district'] = wbCorrelation('objects', $Item['object'], 'district');
-    $Item['metro'] = wbCorrelation('objects', $Item['object'], 'metro');
-    return $Item;
-}
-
-function beforeItemShow(&$Item)
-{
-    $Item["image"] = wbGetItemImg($Item);
-    return $Item;
-}
-
-
-function afterItemSave($Item)
-{
-    $data = (object)[];
-    $data->price_min = null;
-    $data->price_max = null;
-    $data->square_min = null;
-    $data->square_max = null;
-    $item = wbArrayToObj($Item);
-    $object = $item->object;
-    $building = $item->building;
-    if ($building > '') {
-        $list = wbItemList("units", 'object = "'.$object.'"');
-        $c_data = $data;
-        $b_data = $data;
-        foreach ($list['list'] as $unit) {
-            if ($unit["active"] == "on") {
-                if ($c_data->price_min == null or $unit["price"] < $c_data->price_min) {
-                    $c_data->price_min = $unit["price"];
-                }
-                if ($c_data->price_max == null or $unit["price"] > $c_data->price_max) {
-                    $c_data->price_max = $unit["price"];
-                }
-                if ($c_data->square_min == null or $unit["square"] < $c_data->square_min) {
-                    $c_data->square_min = $unit["square"];
-                }
-                if ($c_data->square_max == null or $unit["square"] > $c_data->square_max) {
-                    $c_data->square_max = $unit["square"];
-                }
-                if ($unit["building"] == $building) {
-                    if ($b_data->price_min == null or $unit["price"] < $b_data->price_min) {
-                        $b_data->price_min = $unit["price"];
-                    }
-                    if ($b_data->price_max == null or $unit["price"] > $b_data->price_max) {
-                        $b_data->price_max = $unit["price"];
-                    }
-                    if ($b_data->square_min == null or $unit["square"] < $b_data->square_min) {
-                        $b_data->square_min = $unit["square"];
-                    }
-                    if ($b_data->square_max == null or $unit["square"] > $b_data->square_max) {
-                        $b_data->square_max = $unit["square"];
-                    }
-                }
-            }
-        }
-        $compl = wbItemRead("objects", $object);
-        $compl = array_merge($compl, wbObjToArray($c_data));
-     
-        if (@isset($compl["buildings"]["data"][$building]["data"])) {
-            $compl["buildings"]["data"][$building]["data"] = array_merge($compl["buildings"]["data"][$building]["data"], wbObjToArray($b_data));
-        } else {
-            $compl["buildings"]["data"][$building]["data"] = wbObjToArray($b_data);
-        }
-        wbItemSave("objects", $compl);
-
+    public function afterItemRead(&$Item)
+    {
+        return $Item;
     }
 
+    public function beforeItemFilter(&$Item)
+    {
+        (isset($Item["object"]) && wbCorrelation('objects', $Item['object'], 'active') == '') ? $Item['active'] = '' : null;
+        return $Item;
+    }
+
+    public function beforeItemShow(&$Item)
+    {
+        $Item['district'] = wbCorrelation('objects', $Item['object'], 'district');
+        $Item['metro'] = wbCorrelation('objects', $Item['object'], 'metro');
+        $Item["image"] = wbGetItemImg($Item);
+        (isset($Item["object"]) && wbCorrelation('objects', $Item['object'], 'active') == '') ? $Item['active'] = '' : null;
+        return $Item;
+    }
+
+
+    public function afterItemSave($Item)
+    {
+        // выполнение функции в фоновом режиме
+        $this->app->shadow('/api/call/units/recalc?object='.$Item['object']);
+    }
+
+    public function recalc()
+    {
+        // Пересчёт статистики
+        // Вызов через /api/call/units/recalc
+
+        if (isset($_REQUEST['object'])) {
+            $object = $_REQUEST['object'];
+            $filter = ['filter' => ['object' => $_REQUEST['object']]];
+        } else {
+            $filter = ['filter' => ['active' => 'on']];
+        }
+
+        $units = wbItemList('units', $filter);
+
+        $data = $init = [
+            'price_min' => 0,
+            'price_max' => 0,
+            'square_min' => 0,
+            'square_max' =>0
+        ];
+    
+        $json = new jsonq();
+        $units = $json->collect($units['list']);
+        isset($object) ? $units->where('active', 'on') : null;
+        if ($units->count() > 0) {
+            $this->recalcSet($units, $data);
+        }
+        if (isset($object)) {
+            if ($item = wbItemRead('objects', $object)) {
+                $item = array_merge($item, $data);
+                if (isset($item['buildings']) AND $item['buildings']['data']) {
+                    $data = $init;
+                    foreach((array)$item['buildings']['data'] as $bid => $building) {
+                        $units->where('building', $bid);
+                        if ($units->count() > 0) {
+                            $this->recalcSet($units, $data);
+                        }
+                        $building['data'] = array_merge($building['data'], $data);
+                        $item['buildings']['data'][$bid] = $building;
+
+                    }
+                }
+                $res = wbItemSave('objects', $item);
+            }
+        } else {
+            $item = wbItemRead("admin", "complex_data");
+            $item = array_merge($item, $data);
+            wbItemSave("admin", $item);
+        }
+        die;
+    }
+        function recalcSet($units, &$data)
+        {
+            $data['price_min'] = intval($units->min('price'));
+            $data['price_max'] = intval($units->max('price'));
+            $data['square_min'] = intval($units->min('square'));
+            $data['square_max'] = intval($units->max('square'));
+        }
+
 }
-
-
-
-}
-
-?>

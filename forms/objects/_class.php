@@ -28,6 +28,11 @@ function emptyItemRead(&$Item = [])
     return $Item;
 }
 
+function afterItemSave($Item) {
+        // выполнение функции в фоновом режиме
+        $this->app->shadow('/api/call/units/recalc');
+}
+
 
 function beforeItemSave(&$Item)
 {
@@ -35,10 +40,7 @@ function beforeItemSave(&$Item)
     $Item["levels_max"] = 0;
     $Item["quart"] = 0;
     $Item["year"] = 0;
-    $cdata = wbArrayToObj(wbItemRead("admin", "complex_data"));
-    if (!$cdata) {
-        $cdata = (object)["id" => "complex_data", "ready_year_min" => 0, "ready_year_max" => 0];
-    } // Будем сохранять общие данные по всем комплексам
+
     foreach ($Item["buildings"]["data"] as $building) {
         $data = (object)$building["data"];
         if ($building["active"] == "on") {
@@ -54,25 +56,9 @@ function beforeItemSave(&$Item)
                 $Item["quart"] = $data->quart;
             }
 
-            if (!isset($cdata->ready_year_min)) {
-                $cdata->ready_year_min == 0;
-            }
-
-            if (!isset($cdata->ready_year_max)) {
-                $cdata->ready_year_miax == 0;
-            }
-
-
-            if ($cdata->ready_year_min == 0 or $data->year < $cdata->ready_year_min) {
-                $cdata->ready_year_min = $data->year;
-            }
-            if ($cdata->ready_year_max == 0 or $data->year > $cdata->ready_year_max) {
-                $cdata->ready_year_max = $data->year;
-            }
         }
     }
-    wbItemSave("admin", wbObjToArray($cdata));
-
+    
     return $Item;
 }
 
