@@ -298,7 +298,7 @@
                                                             </a>
                                                         </li>
                                                     </ul>
-                                                    <a class="color-secondary mb-5" href="/object/{{id}}/{{wbFurlGenerate({{name}})}}/">
+                                                    <a class="color-secondary mb-5" href="/unit/{{id}}/">
                                                         <div class="hover-content py-30 px-20 overlay-hover-gradient">
 
                                                             <div class="thumbnail-title z-index-1 position-relative">
