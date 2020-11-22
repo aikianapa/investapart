@@ -112,7 +112,7 @@
 					{{text}}
 				</div>
 				<div class="border-top-1-gray py-30">
-					<h3 class="color-secondary line-bottom pb-15 mb-20">Property Details</h3>
+					<h3 class="color-secondary line-bottom pb-15 mb-20">Детали</h3>
 					<div class="row">
 						<div class="col-md-12 col-lg-6">
 							<ul class="list-by-tag">
@@ -136,8 +136,8 @@
 				<div class="border-top-1-gray py-30">
 					<h3 class="color-secondary line-bottom pb-15 mb-20">Расположение на карте</h3>
 					<div class="property-video position-relative">
-						<div wb-module="yamap">
-							<geopos value="{{geopos.geopos}}" title="{{name}}"></geopos>
+						<div wb="module=yamap" geopos="{{geopos.0.geopos}}" center="{{geopos.0.geopos}}" name="geopos">
+								{{geopos}}
 						</div>
 					</div>
 				</div>
@@ -160,7 +160,7 @@
 		                                <li><span class="color-secondary">Bath: </span>40 sqft</li>
 		                                <li><span class="color-secondary">Storage: </span>125 sqft</li>
 		                            </ul>
-					         		<img src="images/others/plan-1.png" alt="">    
+					         		<img src="/tpl/images/others/plan-1.png" alt="">    
 						      	</div>
 						    </div>
 					  	</div>
@@ -179,7 +179,7 @@
 	                                <li><span class="color-secondary">Bath: </span>40 sqft</li>
 	                                <li><span class="color-secondary">Storage: </span>125 sqft</li>
 	                            </ul>
-						        <img src="images/others/plan-1.png" alt="">
+						        <img src="/tpl/images/others/plan-1.png" alt="">
 						      </div>
 						    </div>
 					  	</div>
@@ -198,7 +198,7 @@
 	                                <li><span class="color-secondary">Bath: </span>40 sqft</li>
 	                                <li><span class="color-secondary">Storage: </span>125 sqft</li>
 	                            </ul>
-						        <img src="images/others/plan-1.png" alt="">
+						        <img src="/tpl/images/others/plan-1.png" alt="">
 						      </div>
 						    </div>
 					  	</div>
@@ -386,7 +386,7 @@
 						<h3 class="color-secondary line-bottom pb-15 mb-20">User Reviews</h3>
 						<div class="comment">
 							<div class="float-left text-center">
-								<div class="user-image"><img src="images/testimonial/1.jpg" class="rounded-circle" alt="images"></div>
+								<div class="user-image"><img src="/tpl/images/testimonial/1.jpg" class="rounded-circle" alt="images"></div>
 								<a class="btn-link mt-15" href="single-property.html#"><i>Replay</i></a>
 							</div>
 							<div class="comment-content d-table">
@@ -408,7 +408,7 @@
 						</div>
 						<div class="comment mt-50 ml-50">
 							<div class="float-left text-center">
-								<div class="user-image"><img src="images/testimonial/2.jpg" class="rounded-circle" alt="images"></div>
+								<div class="user-image"><img src="/tpl/images/testimonial/2.jpg" class="rounded-circle" alt="images"></div>
 								<a class="btn-link mt-15" href="single-property.html#"><i>Replay</i></a>
 							</div>
 							<div class="comment-content d-table">
@@ -430,7 +430,7 @@
 						</div>
 						<div class="comment mt-50">
 							<div class="float-left text-center">
-								<div class="user-image"><img src="images/testimonial/3.jpg" class="rounded-circle" alt="images"></div>
+								<div class="user-image"><img src="/tpl/images/testimonial/3.jpg" class="rounded-circle" alt="images"></div>
 								<a class="btn-link mt-15" href="single-property.html#"><i>Replay</i></a>
 							</div>
 							<div class="comment-content d-table">
@@ -457,7 +457,7 @@
 				<div class="sidebar-widget bg-white mt-50 shadow py-40 px-30">
 					<h3 class="color-secondary line-bottom pb-15 mb-20">Contact an Agent</h3>
 					<div class="d-flex">
-						<div class="contact-agent-image mr-20 float-left"><img src="images/team/1.jpg" class="rounded-circle" alt="images"></div>
+						<div class="contact-agent-image mr-20 float-left"><img src="/tpl/images/team/1.jpg" class="rounded-circle" alt="images"></div>
 	                    <div class="align-self-center color-gray">
 	                    	<h6 class="d-block mb-1 w-100 color-secondary">Andrew Gunservice</h6>
 	                    	<p>fresher@info.com</p>
@@ -487,7 +487,7 @@
 					<div class="owl-carousel slide-1 owl-dots-none">
 						<div class="property-item">
 							<div class="property-img position-relative overflow-hidden overlay-secondary-4">
-								<img src="images/property/5.jpg" alt="image">
+								<img src="/tpl/images/property/5.jpg" alt="image">
 								<span class="thum-category category-1 bg-secondary color-white z-index-1 px-15">New</span>
 								<ul class="hover-option position-absolute icon-white z-index-1">
 									<li>
@@ -523,7 +523,7 @@
 						</div>
 						<div class="property-item">
 							<div class="property-img position-relative overflow-hidden overlay-secondary-4">
-								<img src="images/property/1.jpg" alt="image">
+								<img src="/tpl/images/property/1.jpg" alt="image">
 								<span class="thum-category category-1 bg-secondary color-white z-index-1 px-15">New</span>
 								<ul class="hover-option position-absolute icon-white z-index-1">
 									<li>
@@ -559,7 +559,7 @@
 						</div>
 						<div class="property-item">
 							<div class="property-img position-relative overflow-hidden overlay-secondary-4">
-								<img src="images/property/4.jpg" alt="image">
+								<img src="/tpl/images/property/4.jpg" alt="image">
 								<span class="thum-category category-1 bg-secondary color-white z-index-1 px-15">New</span>
 								<ul class="hover-option position-absolute icon-white z-index-1">
 									<li>
@@ -670,12 +670,12 @@
 								<p>Luctus posuere facilisi eros auctor lacinia litora. Convall aptent nisy parturient scelerisq. Nullam fringil condimen integer mauris lacus aliquam, quam massa lobortis commod proin magna.</p>
 							</div>
 							<div class="owl-carousel partners mt-30">
-								<img src="images/partner/1.png" alt="Image not found!">
-								<img src="images/partner/2.png" alt="Image not found!">
-								<img src="images/partner/3.png" alt="Image not found!">
-								<img src="images/partner/4.png" alt="Image not found!">
-								<img src="images/partner/5.png" alt="Image not found!">
-								<img src="images/partner/6.png" alt="Image not found!">
+								<img src="/tpl/images/partner/1.png" alt="Image not found!">
+								<img src="/tpl/images/partner/2.png" alt="Image not found!">
+								<img src="/tpl/images/partner/3.png" alt="Image not found!">
+								<img src="/tpl/images/partner/4.png" alt="Image not found!">
+								<img src="/tpl/images/partner/5.png" alt="Image not found!">
+								<img src="/tpl/images/partner/6.png" alt="Image not found!">
 							</div>
 						</div>
 						<div class="col-md-12 col-lg-6 px-60">
