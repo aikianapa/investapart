@@ -60,7 +60,7 @@
 					<div class="row">
 						<div class="col-md-12 col-lg-8">
 							<div class="single-property position-relative">
-								<span class="bg-secondary color-white z-index-1 px-15 py-5 mr-20">{{price_min}} ₽ - {{price_max}} ₽</span>
+								<span class="bg-secondary color-white z-index-1 px-15 py-5 mr-20">{{price_min}} - {{price_max}}</span>
 								<h3 class="color-secondary mt-15">{{name}}</h3>
 								<span class="address icon-primary f-14 mt-5"><i class="fa fa-map-marker"></i>{{address}}</span>
 								<ul class="property-features icon-primary d-table f-14 mt-15">
@@ -111,7 +111,7 @@
 					<h3 class="color-secondary line-bottom pb-15 mb-20">Описание</h3>
 					{{text}}
 				</div>
-				<div class="product-slider py-30" wb-if='"{{ count({{images}}) }}" > "0"'>
+				<div class="product-slider py-30" wb-if='"{{images.0.img" > ""'>
 					  	<div class="service-images owl-carousel slide-1 dot-on-slider">
 						  	<wb-foreach wb="from=images">
 								<img src="/thumbc/770x440/src/{{img}}" alt="image">
@@ -133,7 +133,7 @@
 							<ul class="list-by-tag hover-secondery-primary">
 								<li>Корпусов : <span>{{count({{buildings.data}})}}</span></li>
 								<li>Этажей : <span> {{levels_min}}<span wb-if='"{{levels_min}}"!="{{levels_max}}"'> - {{levels_max}}</span></span></li>
-								<li>Цена: <span>{{price_min}} ₽ - {{price_max}} ₽</span></li>
+								<li>Цена: <span>{{price_min}} - {{price_max}}</span></li>
 								<li>Площадь : <span>{{square_min}} м<sup>2</sup> - {{square_max}} м<sup>2</sup></span></li>
 							</ul>
 						</div>
@@ -176,7 +176,7 @@
 										<td wb-tree="form=objects&item={{_var.object}}&field=buildings"><wb>{{name}}</wb></td>
 										<td class="text-center">{{section}}</td>
 										<td class="text-right">{{square}}&nbsp;м<sup>2</sup></td>
-										<td class="text-right">{{price}}&nbsp;₽</td>
+										<td class="text-right">{{price}}</td>
 										<td><a href="/unit/{{id}}/"><i class="fa fa-link"></i></a></td>
 									</tr>
 									<wb-empty>

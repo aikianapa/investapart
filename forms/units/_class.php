@@ -21,6 +21,10 @@ class unitsClass extends cmsFormsClass
         $Item['district'] = wbCorrelation('objects', $Item['object'], 'district');
         $Item['metro'] = wbCorrelation('objects', $Item['object'], 'metro');
         $Item["image"] = wbGetItemImg($Item);
+        if (isset($Item['price'])) {
+            $Item['price'] = money_format('%.0n', intval($Item['price']));
+        }
+
         (isset($Item["object"]) && wbCorrelation('objects', $Item['object'], 'active') == '') ? $Item['active'] = '' : null;
         return $Item;
     }

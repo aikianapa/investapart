@@ -140,7 +140,7 @@
                                             <div class="property-img position-relative overflow-hidden overlay-secondary-4">
                                                 <img src="/thumbc/555x485/src/{{images.0.img}}" alt="name">
                                                 <div class="thumbnail-content z-index-1 color-white-a color-white">
-                                                    <span class="thum-category category-1 bg-secondary color-white z-index-1 px-15" wb-if='"{{price_min}}">""'>от {{price_min}}₽
+                                                    <span class="thum-category category-1 bg-secondary color-white z-index-1 px-15" wb-if='"{{price_min}}">""'>от {{price_min}}
                                                     </span>
                                                     <ul class="hover-option position-absolute icon-white z-index-1">
                                                         <li>
@@ -304,7 +304,7 @@
                                                             <div class="thumbnail-title z-index-1 position-relative">
 
                                                                 <span class="thumbnail-price bg-white color-secondary px-15 mb-10 d-table">
-                                                                    {{price}}₽</span>
+                                                                    {{price}}</span>
                                                                 <wb-data wb="table=objects&item={{object}}">
                                                                     <h4 class="text-truncate">{{name}}</h4>
 
