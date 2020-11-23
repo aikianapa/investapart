@@ -85,18 +85,6 @@
 										<a data-toggle="tooltip" data-placement="top" title="" href="single-property.html#" data-original-title="Share"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
 									</li>
 								</ul>
-								<!-- Nav tabs -->
-								<ul class="nav nav-tabs border-0 float-right navbar-tab-view mt-15 sm-mt-0" role="tablist" style="line-height: 20px;">
-								  <li class="nav-item">
-								    <a class="nav-link active" id="home-tab" data-toggle="tab" href="single-property.html#home" role="tab" aria-controls="home" aria-selected="true"><i class="fa fa-file-image-o" aria-hidden="true"></i></a>
-								  </li>
-								  <li class="nav-item">
-								    <a class="nav-link" id="profile-tab" data-toggle="tab" href="single-property.html#profile" role="tab" aria-controls="profile" aria-selected="false"><i class="flaticon-location"></i></a>
-								  </li>
-								  <li class="nav-item">
-								    <a class="nav-link" id="messages-tab" data-toggle="tab" href="single-property.html#messages" role="tab" aria-controls="messages" aria-selected="false"><i class="flaticon-street-view"></i></a>
-								  </li>
-								</ul>
 							</div>
 						</div>
 					</div>
@@ -111,7 +99,7 @@
 					<h3 class="color-secondary line-bottom pb-15 mb-20">Описание</h3>
 					{{text}}
 				</div>
-				<div class="product-slider py-30" wb-if='"{{images.0.img" > ""'>
+				<div class="product-slider py-30" wb-if='"{{images.0.img}}" > ""'>
 					  	<div class="service-images owl-carousel slide-1 dot-on-slider">
 						  	<wb-foreach wb="from=images">
 								<img src="/thumbc/770x440/src/{{img}}" alt="image">
@@ -142,7 +130,7 @@
 
 				<div class="border-top-1-gray py-30">
 					<h3 class="color-secondary line-bottom pb-15 mb-20">Расположение на карте</h3>
-					<div wb="module=yamap" geopos="{{geopos.0.geopos}}" height="400" center="{{geopos.0.geopos}}" name="geopos">
+					<div wb="module=yamap" geopos="{{geopos.0.geopos}}" height="400" center="{{geopos.0.geopos}}">
 							{{geopos}}
 					</div>
 				</div>
@@ -176,11 +164,11 @@
 										<td wb-tree="form=objects&item={{_var.object}}&field=buildings"><wb>{{name}}</wb></td>
 										<td class="text-center">{{section}}</td>
 										<td class="text-right">{{square}}&nbsp;м<sup>2</sup></td>
-										<td class="text-right">{{price}}</td>
+										<td class="text-right"><a href="/unit/{{id}}/">{{price}}</a></td>
 										<td><a href="/unit/{{id}}/"><i class="fa fa-link"></i></a></td>
 									</tr>
 									<wb-empty>
-										<tr>
+										<tr class="empty">
 										<td colspan="5">Нет доступных предложений</td>
 										</tr>
 									</wb-empty>
@@ -190,6 +178,7 @@
 						      	</div>
 						    </div>
 					  	</div>
+						<wb-jq wb="$dom->find('.empty')->closest('.card')->remove()" />
 					</div>
 				</div>
 			</div>

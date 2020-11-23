@@ -22,8 +22,6 @@ RewriteRule ^(.*)$ http://%1/$1 [L,R=301]
 
 RewriteRule ^database(.*)$ index.php [R=404,L]
 
-RewriteRule ^(.*\.(gif|jpg|png|webp|jpeg))$ /$1
-
 RewriteCond %{REQUEST_FILENAME} !-f 
 RewriteCond %{REQUEST_FILENAME} !-d 
 
