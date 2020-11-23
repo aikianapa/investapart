@@ -11,6 +11,7 @@
     </div>
 
     <wb-include wb="tpl=header.inc.php" />
+	<wb-var object="{{id}}" />
 
     <div class="page-banner overlay-black" style="padding: 150px 0; background-image:url(/thumb/1920x400/src{{images.0.img}});">
         <div class="container h-100">
@@ -59,8 +60,7 @@
 					<div class="row">
 						<div class="col-md-12 col-lg-8">
 							<div class="single-property position-relative">
-								<span class="bg-secondary color-white z-index-1 px-15 py-5 mr-20">For Sale</span>
-								<strong class="color-primary f-20">$ 530,000</strong>
+								<span class="bg-secondary color-white z-index-1 px-15 py-5 mr-20">{{price_min}} ₽ - {{price_max}} ₽</span>
 								<h3 class="color-secondary mt-15">{{name}}</h3>
 								<span class="address icon-primary f-14 mt-5"><i class="fa fa-map-marker"></i>{{address}}</span>
 								<ul class="property-features icon-primary d-table f-14 mt-15">
@@ -111,6 +111,13 @@
 					<h3 class="color-secondary line-bottom pb-15 mb-20">Описание</h3>
 					{{text}}
 				</div>
+				<div class="product-slider py-30" wb-if='"{{ count({{images}}) }}" > "0"'>
+					  	<div class="service-images owl-carousel slide-1 dot-on-slider">
+						  	<wb-foreach wb="from=images">
+								<img src="/thumbc/770x440/src/{{img}}" alt="image">
+							</wb-foreach>
+						</div>
+				</div>
 				<div class="border-top-1-gray py-30">
 					<h3 class="color-secondary line-bottom pb-15 mb-20">Детали</h3>
 					<div class="row">
@@ -126,8 +133,8 @@
 							<ul class="list-by-tag hover-secondery-primary">
 								<li>Корпусов : <span>{{count({{buildings.data}})}}</span></li>
 								<li>Этажей : <span> {{levels_min}}<span wb-if='"{{levels_min}}"!="{{levels_max}}"'> - {{levels_max}}</span></span></li>
-								<li>Цена: <span>{{price_min}} - {{price_max}}</span></li>
-								<li>Площадь : <span>{{square_min}} - {{square_max}}</span></li>
+								<li>Цена: <span>{{price_min}} ₽ - {{price_max}} ₽</span></li>
+								<li>Площадь : <span>{{square_min}} м<sup>2</sup> - {{square_max}} м<sup>2</sup></span></li>
 							</ul>
 						</div>
 					</div>
@@ -135,321 +142,54 @@
 
 				<div class="border-top-1-gray py-30">
 					<h3 class="color-secondary line-bottom pb-15 mb-20">Расположение на карте</h3>
-					<div class="property-video position-relative">
-						<div wb="module=yamap" geopos="{{geopos.0.geopos}}" center="{{geopos.0.geopos}}" name="geopos">
-								{{geopos}}
-						</div>
+					<div wb="module=yamap" geopos="{{geopos.0.geopos}}" height="400" center="{{geopos.0.geopos}}" name="geopos">
+							{{geopos}}
 					</div>
 				</div>
 				<div class="border-top-1-gray py-30">
-					<h3 class="color-secondary line-bottom pb-15 mb-20">Floor Plan</h3>
-					<div id="accordion" class="accordion-style-two">
+					<h3 class="color-secondary line-bottom pb-15 mb-20">Предложения</h3>
+					
+					<div id="accordion" class="accordion-style-two" wb-tree="item=types&branch=units&parent=false">
 					  	<div class="card border-0 mb-10">
 						    <div class="st-top border-0 d-inline-block position-relative card-header p-0 bg-light" id="headingone">
-						        <button class="d-block border-0 bg-gray px-30 py-15 w-100 text-left" data-toggle="collapse" data-target="#collapseone" aria-expanded="true" aria-controls="collapseone">
-						          First Floor
+						        <button class="d-block border-0 bg-gray px-30 py-15 w-100 text-left" data-toggle="collapse" data-target="#a{{id}}" aria-expanded="true" aria-controls="collapseone">
+						          {{name}}
 						        </button>
 						    </div>
-
-						    <div id="collapseone" class="collapse show" aria-labelledby="headingone" data-parent="#accordion">
+							
+							<wb-var show='show' wb-where='"{{_ndx}}" == "1"' wb-else ="" />
+						    <div id="a{{id}}" class="collapse {{_var.show}}" aria-labelledby="headingone" data-parent="#accordion">
 					      		<div class="card-body">
-							      	<ul class="d-inline-block py-20 px-30 list-left">
-		                                <li><span class="color-secondary">Bed: </span>170 sqft</li>
-		                                <li><span class="color-secondary">Kitchen: </span>105 sqft</li>
-		                                <li><span class="color-secondary">Dining: </span>150 sqft</li>
-		                                <li><span class="color-secondary">Bath: </span>40 sqft</li>
-		                                <li><span class="color-secondary">Storage: </span>125 sqft</li>
-		                            </ul>
-					         		<img src="/tpl/images/others/plan-1.png" alt="">    
+								<table class="table table-condenced table-striped">
+									<thead>
+									<tr>
+									<td>Корпус</td>
+									<td class="text-center">Секция</td>
+									<td class="text-right">Площадь</td>
+									<td class="text-right">Цена</td>
+									<td>&nbsp;</td>
+									</tr>
+									</thead>
+									<tbody>
+									<wb-foreach wb="table=units&sort=price:a" wb-filter='{"active":"on" , "object":"{{_var.object}}", "type":"{{id}}"}'>
+									<tr>
+										<td wb-tree="form=objects&item={{_var.object}}&field=buildings"><wb>{{name}}</wb></td>
+										<td class="text-center">{{section}}</td>
+										<td class="text-right">{{square}}&nbsp;м<sup>2</sup></td>
+										<td class="text-right">{{price}}&nbsp;₽</td>
+										<td><a href="/unit/{{id}}/"><i class="fa fa-link"></i></a></td>
+									</tr>
+									<wb-empty>
+										<tr>
+										<td colspan="5">Нет доступных предложений</td>
+										</tr>
+									</wb-empty>
+									</wb-foreach>
+									</tbody>
+								</table>
 						      	</div>
 						    </div>
 					  	</div>
-					  	<div class="card border-0 mb-10">
-						    <div class="st-top border-0 d-inline-block position-relative card-header p-0 bg-light" id="headingtwo">
-						        <button class="d-block border-0 bg-gray px-30 py-15 w-100 text-left collapsed" data-toggle="collapse" data-target="#collapsetwo" aria-expanded="false" aria-controls="collapsetwo">
-						          Second Floor
-						        </button>
-						    </div>
-						    <div id="collapsetwo" class="collapse" aria-labelledby="headingtwo" data-parent="#accordion">
-						      <div class="card-body">
-						      	<ul class="d-inline-block py-20 px-30 list-left">
-	                                <li><span class="color-secondary">Bed: </span>170 sqft</li>
-	                                <li><span class="color-secondary">Kitchen: </span>105 sqft</li>
-	                                <li><span class="color-secondary">Dining: </span>150 sqft</li>
-	                                <li><span class="color-secondary">Bath: </span>40 sqft</li>
-	                                <li><span class="color-secondary">Storage: </span>125 sqft</li>
-	                            </ul>
-						        <img src="/tpl/images/others/plan-1.png" alt="">
-						      </div>
-						    </div>
-					  	</div>
-					  	<div class="card border-0 mb-10">
-						    <div class="st-top border-0 d-inline-block position-relative card-header p-0 bg-light" id="headingthree">
-						        <button class="d-block border-0 bg-gray px-30 py-15 w-100 text-left collapsed" data-toggle="collapse" data-target="#collapsethree" aria-expanded="false" aria-controls="collapsethree">
-						          Third Floor
-						        </button>
-						    </div>
-						    <div id="collapsethree" class="collapse" aria-labelledby="headingthree" data-parent="#accordion">
-						      <div class="card-body">
-						      	<ul class="d-inline-block py-20 px-30 list-left">
-	                                <li><span class="color-secondary">Bed: </span>170 sqft</li>
-	                                <li><span class="color-secondary">Kitchen: </span>105 sqft</li>
-	                                <li><span class="color-secondary">Dining: </span>150 sqft</li>
-	                                <li><span class="color-secondary">Bath: </span>40 sqft</li>
-	                                <li><span class="color-secondary">Storage: </span>125 sqft</li>
-	                            </ul>
-						        <img src="/tpl/images/others/plan-1.png" alt="">
-						      </div>
-						    </div>
-					  	</div>
-					</div>
-				</div>
-				<div class="border-top-1-gray py-30">
-					<h3 class="color-secondary line-bottom pb-15 mb-20">What's Nearby</h3>
-					<h5 class="color-dark">Education</h5>
-					<hr>
-					<div class="single-review d-table w-100">
-						<p>Eladia's Kids (1.10 miles)</p>
-						<div class="rating float-right">
-	                    	<i class="fa fa-star"></i>
-	                    	<i class="fa fa-star"></i>
-	                    	<i class="fa fa-star"></i>
-	                    	<i class="fa fa-star"></i>
-	                    	<i class="fa fa-star"></i>
-	                    	<span>895 reviews</span>
-	                    </div>
-					</div>
-					<div class="single-review mt-10 d-table w-100">
-						<p>Fredrika "Freddy" Keefer (2.31 miles)</p>
-						<div class="rating float-right">
-	                    	<i class="fa fa-star"></i>
-	                    	<i class="fa fa-star"></i>
-	                    	<i class="fa fa-star"></i>
-	                    	<i class="fa fa-star"></i>
-	                    	<i class="fa fa-star-half-o"></i>
-	                    	<span>527 reviews</span>
-	                    </div>
-					</div>
-					<div class="single-review mt-10 d-table w-100">
-						<p>Brooklyn Brainery (4.21 miles)</p>
-						<div class="rating float-right">
-	                    	<i class="fa fa-star"></i>
-	                    	<i class="fa fa-star"></i>
-	                    	<i class="fa fa-star"></i>
-	                    	<i class="fa fa-star-half-o"></i>
-	                    	<i class="fa fa-star-o"></i>
-	                    	<span>321 reviews</span>
-	                    </div>
-					</div>
-
-					<h5 class="color-dark mt-20">Food</h5>
-					<hr>
-					<div class="single-review d-table w-100">
-						<p>Brae, Birregurra, VIC. (0.57 miles)</p>
-						<div class="rating float-right">
-	                    	<i class="fa fa-star"></i>
-	                    	<i class="fa fa-star"></i>
-	                    	<i class="fa fa-star"></i>
-	                    	<i class="fa fa-star"></i>
-	                    	<i class="fa fa-star"></i>
-	                    	<span>1087 reviews</span>
-	                    </div>
-					</div>
-					<div class="single-review mt-10 d-table w-100">
-						<p>Vue de Monde, VIC. (1.32 miles)</p>
-						<div class="rating float-right">
-	                    	<i class="fa fa-star"></i>
-	                    	<i class="fa fa-star"></i>
-	                    	<i class="fa fa-star"></i>
-	                    	<i class="fa fa-star"></i>
-	                    	<i class="fa fa-star"></i>
-	                    	<span>2707 reviews</span>
-	                    </div>
-					</div>
-					<div class="single-review mt-10 d-table w-100">
-						<p>Cutler & Co, VIC. (2.21 miles)</p>
-						<div class="rating float-right">
-	                    	<i class="fa fa-star"></i>
-	                    	<i class="fa fa-star"></i>
-	                    	<i class="fa fa-star"></i>
-	                    	<i class="fa fa-star"></i>
-	                    	<i class="fa fa-star-half-o"></i>
-	                    	<span>972 reviews</span>
-	                    </div>
-					</div>
-
-					<h5 class="color-dark mt-20">Health & Medical</h5>
-					<hr>
-					<div class="single-review d-table w-100">
-						<p>Bethesda Hospital (0.57 miles)</p>
-						<div class="rating float-right">
-	                    	<i class="fa fa-star"></i>
-	                    	<i class="fa fa-star"></i>
-	                    	<i class="fa fa-star"></i>
-	                    	<i class="fa fa-star"></i>
-	                    	<i class="fa fa-star"></i>
-	                    	<span>2710 reviews</span>
-	                    </div>
-					</div>
-					<div class="single-review mt-10 d-table w-100">
-						<p>Attadale Hospital (1.32 miles)</p>
-						<div class="rating float-right">
-	                    	<i class="fa fa-star"></i>
-	                    	<i class="fa fa-star"></i>
-	                    	<i class="fa fa-star"></i>
-	                    	<i class="fa fa-star"></i>
-	                    	<i class="fa fa-star"></i>
-	                    	<span>2707 reviews</span>
-	                    </div>
-					</div>
-					<div class="single-review mt-10 d-table w-100">
-						<p>Bentley Hospital (2.21 miles)</p>
-						<div class="rating float-right">
-	                    	<i class="fa fa-star"></i>
-	                    	<i class="fa fa-star"></i>
-	                    	<i class="fa fa-star"></i>
-	                    	<i class="fa fa-star"></i>
-	                    	<i class="fa fa-star"></i>
-	                    	<span>5907 reviews</span>
-	                    </div>
-					</div>
-				</div>
-				<div class="border-top-1-gray py-30">
-					<div class="row">
-						<div class="col-md-12 col-lg-6">
-							<h3 class="color-secondary line-bottom pb-15 mb-20">Page statistics</h3>
-						</div>
-						<div class="col-md-12 col-lg-6">
-							<!-- Nav tabs -->
-							<ul class="nav nav-tabs nav-link-view border-0 float-right" role="tablist" style="line-height: 20px;">
-							  	<li class="nav-item">
-							    	<a class="nav-link active" id="hours-tab" data-toggle="tab" href="single-property.html#hours" role="tab" aria-controls="hours" aria-selected="true">Hours</a>
-							  	</li>
-							  	<li class="nav-item">
-								    <a class="nav-link" id="weekly-tab" data-toggle="tab" href="single-property.html#weekly" role="tab" aria-controls="weekly" aria-selected="false">Weekly</a>
-							  	</li>
-							  	<li class="nav-item">
-								    <a class="nav-link" id="monthly-tab" data-toggle="tab" href="single-property.html#monthly" role="tab" aria-controls="monthly" aria-selected="false">Monthly</a>
-							  	</li>
-							</ul>
-						</div>
-					</div>
-					<div class="tab-content">
-					  	<div class="tab-pane active" id="hours" role="tabpanel" aria-labelledby="hours-tab">
-						  	<div class="app">
-							  <line-chart></line-chart>
-							</div>
-					  	</div>
-					  	<div class="tab-pane" id="weekly" role="tabpanel" aria-labelledby="weekly-tab">
-					  		<div class="round-chart d-table mx-auto position-relative" style="width: 300px">
-							  <div class="xy-center" style="top: 42%">Sepetmber</div>
-							  <canvas id="myChart" width="300" height="300"></canvas>
-							</div>
-
-					  	</div>
-					  	<div class="tab-pane" id="monthly" role="tabpanel" aria-labelledby="monthly-tab">
-					  		 <canvas id="chart" width="100" height="50"></canvas>
-					  	</div>
-				  	</div>
-				</div>
-				<div class="border-top-1-gray py-30">
-					<h3 class="color-secondary line-bottom pb-15 mb-20">Give Your Review</h3>
-					<form action="single-property.html#" method="post" class="form-rating">
-						<div class="row">
-							<div class="form-group col-md-12 rating-animation">
-								<span>Move Mouse for Rating</span>
-							  	<div class="star-rating pt-10">
-								  	<select id="star-rating" name="rating" autocomplete="off">
-									  	<option value="Strongly Disagree">Very Bad Review</option>
-									  	<option value="Disagree">Bad Review</option>											  
-									  	<option value="Neither Agree or Disagree" selected="selected">Good Review</option>
-									  	<option value="Agree">Very Good Quality</option>
-									  	<option value="Strongly Agree">Excellent Quality</option>
-								  	</select>
-							  	</div>
-							</div>
-							<div class="form-group col-md-12 col-lg-6">
-								<input type="text" class="form-control bg-gray" placeholder="Your Name*">
-							</div>
-							<div class="form-group col-md-12 col-lg-6">
-								<input type="email" class="form-control bg-gray" placeholder="Email Address*">
-							</div>
-							<div class="form-group col-md-12 col-lg-12">
-								<textarea class="form-control bg-gray" rows="7" placeholder="Type Comments..."></textarea>
-							</div>
-							<div class="col-lg-12"><button type="submit" class="btn btn-secondary">Send</button></div>
-						</div>
-					</form>
-				</div>
-				<div class="border-top-1-gray pt-30">
-					<div class="comments-area">
-						<h3 class="color-secondary line-bottom pb-15 mb-20">User Reviews</h3>
-						<div class="comment">
-							<div class="float-left text-center">
-								<div class="user-image"><img src="/tpl/images/testimonial/1.jpg" class="rounded-circle" alt="images"></div>
-								<a class="btn-link mt-15" href="single-property.html#"><i>Replay</i></a>
-							</div>
-							<div class="comment-content d-table">
-								<div class="meta d-inline-block mb-15">
-									<h5 class="color-dark">Dwyane Clark</h5>
-									<div class="user-rating">
-										<ul>
-											<li class="active"></li>
-											<li class="active"></li>
-											<li class="active"></li>
-											<li class="active"></li>
-											<li class="deactive"></li>
-										</ul>
-									</div>
-								</div>
-								<div class="float-right f-14">Posted On 10th September, 2020</div>
-								<p>Purus litora accumsan platea convallis consequat congue iaculis primis consectetse rutrum nisl senectus molestie luctus. Facilisis varius arcu lacinia. Dignissim cursus imperdie nostra dui semper commodo sociosq.</p>
-							</div>
-						</div>
-						<div class="comment mt-50 ml-50">
-							<div class="float-left text-center">
-								<div class="user-image"><img src="/tpl/images/testimonial/2.jpg" class="rounded-circle" alt="images"></div>
-								<a class="btn-link mt-15" href="single-property.html#"><i>Replay</i></a>
-							</div>
-							<div class="comment-content d-table">
-								<div class="meta d-inline-block mb-15">
-									<h5 class="color-dark">Elizabeth Maria</h5>
-									<div class="user-rating">
-										<ul>
-											<li class="active"></li>
-											<li class="active"></li>
-											<li class="active"></li>
-											<li class="active"></li>
-											<li class="deactive"></li>
-										</ul>
-									</div>
-								</div>
-								<div class="float-right f-14">Posted On 5th September, 2020</div>
-								<p>Purus litora accumsan platea convallis consequat congue iaculis primis consectetse rutrum nisl senectus molestie luctus. Facilisis varius arcu lacinia. Dignissim cursus imperdie nostra dui semper commodo sociosq.</p>
-							</div>
-						</div>
-						<div class="comment mt-50">
-							<div class="float-left text-center">
-								<div class="user-image"><img src="/tpl/images/testimonial/3.jpg" class="rounded-circle" alt="images"></div>
-								<a class="btn-link mt-15" href="single-property.html#"><i>Replay</i></a>
-							</div>
-							<div class="comment-content d-table">
-								<div class="meta d-inline-block mb-15">
-									<h5 class="color-dark">Jennifer Susan</h5>
-									<div class="user-rating">
-										<ul>
-											<li class="active"></li>
-											<li class="active"></li>
-											<li class="active"></li>
-											<li class="active"></li>
-											<li class="deactive"></li>
-										</ul>
-									</div>
-								</div>
-								<div class="float-right f-14">Posted On 24th August, 2020</div>
-								<p>Purus litora accumsan platea convallis consequat congue iaculis primis consectetse rutrum nisl senectus molestie luctus. Facilisis varius arcu lacinia. Dignissim cursus imperdie nostra dui semper commodo sociosq.</p>
-							</div>
-						</div>
 					</div>
 				</div>
 			</div>
@@ -594,60 +334,6 @@
 							</div>
 						</div>
 					</div>
-				</div>
-				<div class="sidebar-widget bg-white mt-50 shadow py-40 px-30">
-					<h3 class="color-secondary line-bottom pb-15 mb-20">Mortgage Calculator</h3>
-					<ul class="list-by-tag">
-						<li>Total Amount <span>Your payment</span></li>
-						<li><strong class="color-primary f-20">$ 530,000</strong> <span class="color-primary">$ 1,458</span></li>
-					</ul>
-					<ul class="list-by-tag mt-20">
-						<li>Total cost of loan <span>$ 610,718</span></li>
-						<li>Total interest paid <span>$ 80,718</span></li>
-						<li>Payment <span>Monthly</span></li>
-						<li>Mortgage payment <span>$ 1,458</span></li>
-					</ul>
-					<form action="single-property.html#" method="post" class="mt-20 border-top-1-gray pt-20 adbanced-form-two">
-						<div class="row">
-							<div class="form-group col-md-12">
-								<label>Total Amount </label>
-								<input type="text" class="form-control bg-gray" value="$ 530,000">
-							</div>
-							<div class="form-group col-md-12">
-								<label>Down Payment </label>
-								<input type="text" class="form-control bg-gray" value="$ 0">
-							</div>
-							<div class="form-group col-md-12">
-								<label>Interest Rate </label>
-								<input type="text" class="form-control bg-gray" value="% 2.5">
-							</div>
-							<div class="form-group col-md-12">
-								<label>Loan Period</label>
-								<div class="select-wrapper position-relative">
-									<select class="select form-control has-val">
-										<option>5 Years</option>
-										<option>10 Years</option>
-										<option>15 Years</option>
-										<option>20 Years</option>
-										<option>25 Years</option>
-										<option>30 Years</option>
-									</select>
-								</div>
-							</div>
-							<div class="form-group col-md-12">
-								<label>Payment Preiod</label>
-								<div class="select-wrapper position-relative">
-									<select class="select form-control has-val">
-										<option>Monthly</option>
-										<option>Semi-Monthly</option>
-										<option>Bi-Weekly</option>
-										<option>Weekly</option>
-									</select>
-								</div>
-							</div>
-							<div class="col-lg-12"><button type="submit" class="btn btn-primary w-100">Calculate</button></div>
-						</div>
-					</form>
 				</div>
 			</div>
 		</div>
