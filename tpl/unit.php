@@ -120,7 +120,7 @@
 				<div class="product-slider py-30" wb-if='"{{images.0.img}}" > ""'>
 					  	<div class="service-images owl-carousel slide-1 dot-on-slider">
 						  	<wb-foreach wb="from=images">
-								<img src="/thumb/770x440/src/{{img}}" alt="image">
+								<img data-src="/thumb/770x440/src/{{img}}" alt="image">
 							</wb-foreach>
 						</div>
 				</div>
