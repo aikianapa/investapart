@@ -137,14 +137,33 @@
     });
     // Owl Carousal Slider Style One
 	//----------------------------------------------------------------------------------
+
+
+		$('.service-images').owlCarousel({
+			loop: true,
+			autoplay: true,
+			smartSpeed: 1500,
+			autoplayTimeout: 5000,
+			autoplayHoverPause: true,
+			autoWidth: true,
+			mergeFit: false,
+			margin: 0,
+			dots: true,
+			nav: false,
+			navText: ['<span class="fa fa-long-arrow-left"></span>', '<span class="fa fa-long-arrow-right"></span>'],
+			responsive: {
+				0: {
+					items: 1
+				}
+			}
+		});
+
 	$('.slide-1').owlCarousel({
 		 loop: true,
 		 autoplay:true,
 	     smartSpeed:1500,
 	     autoplayTimeout:5000,
 		 autoplayHoverPause:true,
-		 autoWidth: true,
-		 mergeFit: false,
 		 margin: 0,
 		 dots: true,
 		 nav: false,
@@ -632,59 +651,18 @@
     ratingEnable();
     }
 
+	$(document).on('wb-ajax-done',function(ev, data){
+		if (data.url == '/ajax/mail/') {
+			if (!data.data.error) {
+				$(data.form).find('.error-handel #success').show();
+				$(data.form)[0].reset();
+			} else {
+				$(data.form).find('.error-handel #success').show();
+			}
+		}
+	})
 
-    //  Contact Form Validation
-	//------------------------------------------------
-	if($contact.length){
-	    $contact.validate({  //#contact-form contact form id
-	      rules: {
-	        name: {
-	          required: true    // Field name here
-	        },
-	        email: {
-	          required: true, // Field name here
-	          email: true
-	        },
-	        subject: {
-	          required: true
-	        },
-	        message: {
-	          required: true
-	        }
-	      },
-	      
-	      messages: {
-	                name: "Please enter your Name", //Write here your error message that you want to show in contact form
-	                email: "Please enter valid Email", //Write here your error message that you want to show in contact form
-	                subject: "Please enter your Subject", //Write here your error message that you want to show in contact form
-	                message: "Please write your Message" //Write here your error message that you want to show in contact form
-	            },
 
-	            submitHandler: function (form) {
-	                $('#send').attr({'disabled' : 'true', 'value' : 'Sending...' });
-	                $.ajax({
-	                    type: "POST",
-	                    url: "email.php",
-	                    data: $(form).serialize(),
-	                    success: function () {
-	                        $('#send').removeAttr('disabled').attr('value', 'Send');
-	                        $( "#success").slideDown( "slow" );
-	                        setTimeout(function() {
-	                        $( "#success").slideUp( "slow" );
-	                        }, 5000);
-	                        form.reset();
-	                    },
-	                    error: function() {
-	                        $('#send').removeAttr('disabled').attr('value', 'Send');
-	                        $( "#error").slideDown( "slow" );
-	                        setTimeout(function() {
-	                        $( "#error").slideUp( "slow" );
-	                        }, 5000);
-	                    }
-	                });
-	                return false; // required to block normal submit since you used ajax
-	            }
 
-	    });
-	  }
+	  
 	}

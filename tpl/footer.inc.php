@@ -1,5 +1,5 @@
 <html>
-<footer class="bg-secondary py-50">
+<footer class="bg-secondary pb-50" style="margin-top: -233px; padding-top: 313px;">
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-4 col-md-4 col-lg-6">
