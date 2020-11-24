@@ -50,7 +50,7 @@
 ==================================================================-->
 
 <div wb-module="yamap" class="map-canvas contact">
-[{"address": "Санкт-Петербург, наб.Макарова, д. 60\/1","title": "","geopos": "{{prop.data.geopos.data.value}}","zoom": "10","center": "{{prop.data.geopos.name}}"}]
+[{"address": "Санкт-Петербург, наб.Макарова, д. 60\/1","title": "","geopos": "{{prop.data.geopos.data.value}}","zoom": "15","center": "{{prop.data.geopos.name}}"}]
 </div>
 <!-- End Map
 ==================================================================-->
