@@ -37,7 +37,7 @@
                                 </a>
                             </li>
                             <li class="breadcrumb-item">
-                                <a href="/catalog">Комплексы</a>
+                                <a href="/catalog/">Комплексы</a>
                             </li>
                             <li class="breadcrumb-item">
                                 <a href="{{_route.uri}}">{{name}}</a>
@@ -102,7 +102,7 @@
 				<div class="product-slider py-30" wb-if='"{{images.0.img}}" > ""'>
 					  	<div class="service-images owl-carousel slide-1 dot-on-slider">
 						  	<wb-foreach wb="from=images">
-								<img src="/thumbc/770x440/src/{{img}}" alt="image">
+								<img data-src="/thumbc/770x440/src/{{img}}" alt="image">
 							</wb-foreach>
 						</div>
 				</div>
@@ -145,8 +145,7 @@
 						        </button>
 						    </div>
 							
-							<wb-var show='show' wb-where='"{{_ndx}}" == "1"' wb-else ="" />
-						    <div id="a{{id}}" class="collapse {{_var.show}}" aria-labelledby="headingone" data-parent="#accordion">
+						    <div id="a{{id}}" class="collapse" aria-labelledby="headingone" data-parent="#accordion">
 					      		<div class="card-body">
 								<table class="table table-condenced table-striped">
 									<thead>
@@ -178,15 +177,16 @@
 						      	</div>
 						    </div>
 					  	</div>
-						<wb-jq wb="$dom->find('.empty')->closest('.card')->remove()" />
 					</div>
+					<wb-jq wb="$dom->find('#accordion .empty')->closest('.card')->remove()" />
+					<wb-jq wb="$dom->find('#accordion .card:first-child .collapse')->addClass('show')" />
 				</div>
 			</div>
 			<div class="col-md-12 col-lg-4">
 				<div class="sidebar-widget bg-white mt-50 shadow py-40 px-30">
 					<h3 class="color-secondary line-bottom pb-15 mb-20">Contact an Agent</h3>
 					<div class="d-flex">
-						<div class="contact-agent-image mr-20 float-left"><img src="/tpl/images/team/1.jpg" class="rounded-circle" alt="images"></div>
+						<div class="contact-agent-image mr-20 float-left"><img data-src="/tpl/images/team/1.jpg" class="rounded-circle" alt="images"></div>
 	                    <div class="align-self-center color-gray">
 	                    	<h6 class="d-block mb-1 w-100 color-secondary">Andrew Gunservice</h6>
 	                    	<p>fresher@info.com</p>
@@ -216,7 +216,7 @@
 					<div class="owl-carousel slide-1 owl-dots-none">
 						<div class="property-item">
 							<div class="property-img position-relative overflow-hidden overlay-secondary-4">
-								<img src="/tpl/images/property/5.jpg" alt="image">
+								<img data-src="/tpl/images/property/5.jpg" alt="image">
 								<span class="thum-category category-1 bg-secondary color-white z-index-1 px-15">New</span>
 								<ul class="hover-option position-absolute icon-white z-index-1">
 									<li>
@@ -252,7 +252,7 @@
 						</div>
 						<div class="property-item">
 							<div class="property-img position-relative overflow-hidden overlay-secondary-4">
-								<img src="/tpl/images/property/1.jpg" alt="image">
+								<img data-src="/tpl/images/property/1.jpg" alt="image">
 								<span class="thum-category category-1 bg-secondary color-white z-index-1 px-15">New</span>
 								<ul class="hover-option position-absolute icon-white z-index-1">
 									<li>
@@ -288,7 +288,7 @@
 						</div>
 						<div class="property-item">
 							<div class="property-img position-relative overflow-hidden overlay-secondary-4">
-								<img src="/tpl/images/property/4.jpg" alt="image">
+								<img data-src="/tpl/images/property/4.jpg" alt="image">
 								<span class="thum-category category-1 bg-secondary color-white z-index-1 px-15">New</span>
 								<ul class="hover-option position-absolute icon-white z-index-1">
 									<li>
@@ -345,12 +345,12 @@
 								<p>Luctus posuere facilisi eros auctor lacinia litora. Convall aptent nisy parturient scelerisq. Nullam fringil condimen integer mauris lacus aliquam, quam massa lobortis commod proin magna.</p>
 							</div>
 							<div class="owl-carousel partners mt-30">
-								<img src="/tpl/images/partner/1.png" alt="Image not found!">
-								<img src="/tpl/images/partner/2.png" alt="Image not found!">
-								<img src="/tpl/images/partner/3.png" alt="Image not found!">
-								<img src="/tpl/images/partner/4.png" alt="Image not found!">
-								<img src="/tpl/images/partner/5.png" alt="Image not found!">
-								<img src="/tpl/images/partner/6.png" alt="Image not found!">
+								<img data-src="/tpl/images/partner/1.png" alt="Image not found!">
+								<img data-src="/tpl/images/partner/2.png" alt="Image not found!">
+								<img data-src="/tpl/images/partner/3.png" alt="Image not found!">
+								<img data-src="/tpl/images/partner/4.png" alt="Image not found!">
+								<img data-src="/tpl/images/partner/5.png" alt="Image not found!">
+								<img data-src="/tpl/images/partner/6.png" alt="Image not found!">
 							</div>
 						</div>
 						<div class="col-md-12 col-lg-6 px-60">

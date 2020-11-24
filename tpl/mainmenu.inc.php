@@ -1,6 +1,6 @@
 <html>
 <nav class="navbar navbar-expand-lg navbar-light px-0">
-    <a class="navbar-brand" href="index-7.html#">
+    <a class="navbar-brand" href="/">
         <img src="/thumbc/200x45/src/{{_sett.logo.0.img}}" alt="{{_sett.header}}">
     </a>
     <button class="toggle-btn" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -43,8 +43,8 @@
                 </wb-foreach>
             </ul>
             <ul class="admin-info color-white-a">
-                <li><a href="/cms/signin">Вход</a></li>
-                <li><a href="/cms/signup">Регистрация</a></li>
+                <li><a href="/cms/login">Вход</a></li>
+                <li><a href="/cms/img data-src=">Регистрация</a></li>
             </ul>
         </div>
     </wb-data>

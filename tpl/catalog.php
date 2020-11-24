@@ -138,7 +138,7 @@
                                     <div class="col-md-12 col-lg-6 col-xl-4">
                                         <div class="property-thumbnail mt-30">
                                             <div class="property-img position-relative overflow-hidden overlay-secondary-4">
-                                                <img src="/thumbc/555x485/src/{{images.0.img}}" alt="name">
+                                                <img data-src="/thumbc/555x485/src/{{images.0.img}}" alt="name">
                                                 <div class="thumbnail-content z-index-1 color-white-a color-white">
                                                     <span class="thum-category category-1 bg-secondary color-white z-index-1 px-15" wb-if='"{{price_min}}">""'>от {{price_min}}
                                                     </span>
@@ -282,7 +282,7 @@
                                     <div class="col-md-12 col-lg-6 col-xl-4">
                                         <div class="property-thumbnail mt-30">
                                             <div class="property-img position-relative overflow-hidden overlay-secondary-4">
-                                                <img src="/thumbc/555x485/src/{{images.0.img}}" alt="name">
+                                                <img data-src="/thumbc/555x485/src/{{images.0.img}}" alt="name">
                                                 <div class="thumbnail-content z-index-1 color-white-a color-white">
                                                     <span class="thum-category category-1 bg-secondary color-white z-index-1 px-15">
                                                         {{square}} кв.м.
@@ -362,12 +362,12 @@
                                         proin magna.</p>
                                 </div>
                                 <div class="owl-carousel partners mt-30">
-                                    <img src="tpl/images/partner/1.png" alt="Image not found!">
-                                    <img src="tpl/images/partner/2.png" alt="Image not found!">
-                                    <img src="tpl/images/partner/3.png" alt="Image not found!">
-                                    <img src="tpl/images/partner/4.png" alt="Image not found!">
-                                    <img src="tpl/images/partner/5.png" alt="Image not found!">
-                                    <img src="tpl/images/partner/6.png" alt="Image not found!">
+                                    <img data-src="tpl/images/partner/1.png" alt="Image not found!">
+                                    <img data-src="tpl/images/partner/2.png" alt="Image not found!">
+                                    <img data-src="tpl/images/partner/3.png" alt="Image not found!">
+                                    <img data-src="tpl/images/partner/4.png" alt="Image not found!">
+                                    <img data-src="tpl/images/partner/5.png" alt="Image not found!">
+                                    <img data-src="tpl/images/partner/6.png" alt="Image not found!">
                                 </div>
                             </div>
                             <div class="col-md-12 col-lg-6 px-60">

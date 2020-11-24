@@ -39,9 +39,9 @@
 // Cache jQuery Selector
 //=====================================================================================
 
-(function ($) {
-    "use strict";
-	
+
+	var custom_init = function() {
+		
 	// Cache jQuery Selector
 	//----------------------------------------------------------------------------------
 	var $window   		= $(window),
@@ -142,7 +142,9 @@
 		 autoplay:true,
 	     smartSpeed:1500,
 	     autoplayTimeout:5000,
-	     autoplayHoverPause:true,
+		 autoplayHoverPause:true,
+		 autoWidth: true,
+		 mergeFit: false,
 		 margin: 0,
 		 dots: true,
 		 nav: false,
@@ -686,5 +688,4 @@
 
 	    });
 	  }
-
-})(jQuery);
+	}

@@ -15,21 +15,8 @@
     <link rel="stylesheet" href="{{_var.base}}/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{_var.base}}/css/style.css">
     <link rel="stylesheet" href="{{_var.base}}/css/color.css">
-    <link rel="stylesheet" href="{{_var.base}}/css/custom.css">
-    <link rel="stylesheet" href="{{_var.base}}/css/font-awesome.min.css">
-    <link rel="stylesheet" href="{{_var.base}}/css/layerslider.css">
-    <link rel="stylesheet" href="{{_var.base}}/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="{{_var.base}}/fonts/flaticon/flaticon.css">
-    <!--====================================================
-	Typography links 
-	Import Google Fonts
-	======================================================-->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
-
     <!-- Title -->
-    <title>Fresher - Real Estate Template</title>
+    <title>{{header}}</title>
 
     <!-- Favicon Icon -->
     <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
