@@ -150,7 +150,6 @@
 		 nav: false,
 		 navText: ['<span class="fa fa-long-arrow-left"></span>','<span class="fa fa-long-arrow-right"></span>'],
 		 responsive:{
-
 		    0:{
 		      items:1
 		    }
