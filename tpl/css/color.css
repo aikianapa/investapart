@@ -124,7 +124,10 @@ select, select:focus{
 .owl-nav button:hover,
 .social-media-2 a:hover, .progress-bar:before, .progress-bar,
 .owl-dot.active, .line-bottom:before, .ball-scale-multiple div,
-.property-cost li, #gaery-boxll::-webkit-scrollr-trackba,
+.property-cost li, #gaery-boxll::-webkit-scrollr-trackba
+{
+	background-color: #fd9834 !important;
+}
 #gallery-box::-webkit-scrollbar-thumb:hover,
 .accordion [aria-expanded="true"], .news-letter button:hover,
 .invoice-list-table thead th:nth-child(odd),
@@ -137,7 +140,9 @@ select, select:focus{
 .custom-radio .design:before,
 .agencies-content .number,
 .round-shape:before,
-.text-thumbnail:hover,
+.text-thumbnail:hover {
+	background-color: #fd9834 !important;
+}
 .nav-tabs .nav-link.active,
 .nav-tabs .nav-link:hover,
 a.btn-round:hover, .navbar button span,
@@ -225,7 +230,7 @@ a.btn-round,
 .overlay-black:before{
 	background-color: rgba(0, 0, 0, .7);
 }
-.overlay-half-secondery:before{
+.overlay-half-secondary:before{
 	background-color: rgba(36, 36, 36, 0.9);
 }
 

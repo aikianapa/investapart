@@ -13,15 +13,15 @@
 	<wb-include wb="tpl=header.inc.php" />
 	<wb-var object="{{id}}" />
 
-	<div class="page-banner overlay-white" style="padding: 40px 0; background-image:url(/thumb/192x40/src{{images.0.img}});">
+	<div class="page-banner overlay-black" style="padding: 40px 0; background-image:url(/thumb/1920x400/src{{images.0.img}});">
 		<div class="container h-100">
 			<div class="row h-100 align-items-center">
 				<div class="col-md-12 col-lg-12">
 						<div class="row">
 							<div class="col-md-12 col-lg-8">
-								<div class="single-property position-relative">
-									<span class="bg-secondary color-white z-index-1 px-15 py-5 mr-20">{{price_min}} - {{price_max}}</span>
-									<h3 class="color-secondary mt-15">{{name}}</h3>
+								<div class="single-property position-relative color-white">
+									<span class="bg-primary z-index-1 px-15 py-5 mr-20">{{price_min}} - {{price_max}}</span>
+									<h3 class="color-primary mt-15">{{name}}</h3>
 									<span class="address icon-primary f-14 mt-5">
 										<i class="fa fa-map-marker"></i>{{address}}</span>
 									<ul class="property-features icon-primary d-table f-14 mt-15">

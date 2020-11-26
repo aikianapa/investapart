@@ -58,11 +58,11 @@
                             <div class="col-12">
                                 <ul class="nav nav-tabs border-0 navbar-tab-view mt-sm-15" id="myTab" role="tablist" style="line-height: 20px;">
                                     <li class="nav-item w-50">
-                                        <a class="nav-link ___active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">
+                                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#objects" role="tab" aria-controls="home" aria-selected="true">
                                             <i class="fa fa-building-o" aria-hidden="true"></i> Апарт-отели</a>
                                     </li>
                                     <li class="nav-item w-50">
-                                        <a class="nav-link active" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">
+                                        <a class="nav-link " id="contact-tab" data-toggle="tab" href="#units" role="tab" aria-controls="contact" aria-selected="false">
                                             <i class="fa fa-columns" aria-hidden="true"></i> Апартаменты</a>
                                     </li>
                                 </ul>
@@ -73,7 +73,7 @@
 
                 <div class="col-md-12 col-lg-12">
                     <div class="tab-content  border-top-1-gray" id="myTabContent">
-                        <div class="tab-pane fade ___show ___active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <div class="tab-pane fade show active" id="objects" role="tabpanel" aria-labelledby="home-tab">
                             <div class="row">
                                 <div class="col-md-12 col-lg-12">
                                     <form class="adbanced-form-two amenities-list border-bottom-1-gray" id="catalogFilter">
@@ -191,7 +191,7 @@
                                 </wb-foreach>
                             </div>
                         </div>
-                        <div class="tab-pane fade show active" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                        <div class="tab-pane fade" id="units" role="tabpanel" aria-labelledby="contact-tab">
                             <div class="row">
                                 <div class="col-md-12 col-lg-12">
                                     <form class="adbanced-form-two amenities-list border-bottom-1-gray" id="apartFilter">

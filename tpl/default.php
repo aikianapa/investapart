@@ -77,7 +77,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="map-home overlay-half-secondery vh-100" id="map" style="position: absolute; top: 0; left: 0; bottom: 0; width: 100%">
+		<div class="map-home overlay-half-secondary vh-100" id="map" style="position: absolute; top: 0; left: 0; bottom: 0; width: 100%">
 			<div wb="module=yamap" center="" zoom="16" id="yamap" >
 				<wb-foreach wb="table=objects" id="yamap">
 					<geopos data="{{geopos.0}}" />
