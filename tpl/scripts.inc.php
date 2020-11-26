@@ -36,25 +36,13 @@
 			,"{{_var.base}}/js/jquery.slider.js"
 			,"{{_var.base}}/js/wow.js"
 			,"{{_var.base}}/js/custom.js"
-			,"https://maps.googleapis.com/maps/api/js?key=AIzaSyDlVVUxeZqpBLv-jrgsQO1XQ7wvBS9mlRo"
-			,"{{_var.base}}/js/map/markerwithlabel_packed.js"
-			,"{{_var.base}}/js/map/infobox.js"
-			,"{{_var.base}}/js/map/markerclusterer_packed.js"
 			,"{{_var.base}}/js/validate.js"
-			,"{{_var.base}}/js/map/custom-map.js"
 
 		], 'scripts-ready', function() {
 
             custom_init();
 
 
-
-
-            // Map View Latitude & Longitude
-            //------------------------------------
-            var _latitude = 36.596165;
-            var _longitude = -97.062988;
-            createHomepageGoogleMap(_latitude, _longitude);
             // Layer Slider
             //------------------------------------
             $('#slider').layerSlider({
