@@ -25,6 +25,7 @@
 									<h2 class="mb-50">Поиск по карте</h2>
 								</div>
 								<div class="form-group col-6">
+									<label class="form-control-label">Район</label>
 									<div class="select-wrapper position-relative">
 										<select wb-tree="item=city&branch=districts&parent=false&children=false&sort=name" wb-change="#catalogFilter [name=metro]"
 										 placeholder="Район..." name="district" class="form-control has-val">
@@ -33,6 +34,7 @@
 									</div>
 								</div>
 								<div class="form-group col-6">
+									<label class="form-control-label">Метро</label>
 									<div class="select-wrapper position-relative">
 										<select wb-tree="item=city&branch=districts->%district%&parent=false&children=false&sort=name" wb-strict="false" placeholder="Метро..."
 										 name="metro" class="form-control has-val">
@@ -42,6 +44,7 @@
 									</div>
 								</div>
 								<div class="form-group col-6">
+									<label class="form-control-label">Площадь</label>
 									<div class="price_range">
 										<div class="price-filter" wb-data="table=admin&item=complex_data">
 											<wb-data wb='table=admin&item=complex_data'>
@@ -54,6 +57,7 @@
 								</div>
 
 								<div class="form-group col-6">
+									<label class="form-control-label">Цена</label>
 									<div class="price_range">
 										<div class="price-filter" wb-data="table=admin&item=complex_data">
 											<wb-data wb='table=admin&item=complex_data'>
@@ -78,11 +82,19 @@
 			</div>
 		</div>
 		<div class="map-home overlay-half-secondary vh-100" id="map" style="position: absolute; top: 0; left: 0; bottom: 0; width: 100%">
+			<wb-data wb='table=admin&item=complex_data'>
 			<div wb="module=yamap" center="" zoom="16" id="yamap" >
-				<wb-foreach wb="table=objects" id="yamap">
-					<geopos data="{{geopos.0}}" />
+				<wb-foreach wb="table=objects" wb-filter="{'active':'on','square_min':{'$gte':'{{square_min}}'},'square_max':{'$lte':'{{square_max}}'} }" id="yamap">
+					<geopos class="d-none" data="{{geopos.0}}" >
+							<div>
+								<b>{{name}}</b><br>
+								{{geopos.0.address}}<br>
+								<a href="/object/{{id}}/{{wbFurlGenerate({{name}})}}/">Подробно</a>
+							</div>
+					</geopos>
 				</wb-foreach>
 			</div>
+			</wb-data>
 		</div>
 	</div>
 	<!-- Map End 

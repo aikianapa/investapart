@@ -144,7 +144,7 @@
 										</li>
 									</ul>
 									<wb-var building="{{buildings.data.{{_parent.building}}.name}}" />
-									<wb-var geopos="{{geopos}}" />
+									<wb-var geopos="{{geopos.0}}" />
 									<wb-data>
 							</div>
 							<div class="col-md-12 col-lg-6">
@@ -165,8 +165,8 @@
 
 					<div class="border-top-1-gray py-30">
 						<h3 class="color-secondary line-bottom pb-15 mb-20">Расположение на карте</h3>
-						<div wb="module=yamap" geopos="{{_var.geopos.0.geopos}}" height="400" center="{{_var.geopos.0.geopos}}">
-							{{_var.geopos}}
+						<div wb="module=yamap" height="400">
+							<geopos data="{{_var.geopos}}" ></geopos>
 						</div>
 					</div>
 

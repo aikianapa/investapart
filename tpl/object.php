@@ -155,8 +155,8 @@
 
 					<div class="border-top-1-gray py-30">
 						<h3 class="color-secondary line-bottom pb-15 mb-20">Расположение на карте</h3>
-						<div wb="module=yamap" geopos="{{geopos.0.geopos}}" height="400" center="{{geopos.0.geopos}}">
-							{{geopos}}
+						<div wb="module=yamap" height="400">
+							<geopos data="{{geopos.0}}" />
 						</div>
 					</div>
 					<div class="border-top-1-gray py-30">
