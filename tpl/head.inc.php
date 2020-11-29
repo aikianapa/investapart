@@ -12,9 +12,9 @@
     <wb-var base="/tpl" />
     <!--CSs Links
 	==================================================================-->
-    <link rel="stylesheet" href="{{_var.base}}/css/bootstrap.min.css">
+    <!--link rel="stylesheet" href="{{_var.base}}/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{_var.base}}/css/style.css">
-    <link rel="stylesheet" href="{{_var.base}}/css/color.css">
+    <link rel="stylesheet" href="{{_var.base}}/css/color.css"-->
     <!-- Title -->
     <title>{{header}}</title>
 

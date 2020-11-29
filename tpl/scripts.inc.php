@@ -1,18 +1,15 @@
 <html>
 
+
 <script src="/engine/js/jquery.min.js"></script>
 <script src="/engine/js/wbapp.js"></script>
 
-
-
 <script>
-(function($) {
-
     $(document).on('wbapp-go', function() {
         wbapp.loadStyles([
-//			"{{_var.base}}/css/bootstrap.min.css"
-//			,"{{_var.base}}/css/style.css"
-//			,"{{_var.base}}/css/color.css"
+			"{{_var.base}}/css/bootstrap.min.css"
+			,"{{_var.base}}/css/style.css"
+			,"{{_var.base}}/css/color.css"
 			,"{{_var.base}}/css/custom.css"
 			,"{{_var.base}}/css/font-awesome.min.css"
 			,"{{_var.base}}/css/layerslider.css"
@@ -39,52 +36,33 @@
 			,"{{_var.base}}/js/validate.js"
 
 		], 'scripts-ready', function() {
-
             custom_init();
-
-
-            // Layer Slider
-            //------------------------------------
-            $('#slider').layerSlider({
-                sliderVersion: '6.0.0',
-                type: 'fullwidth',
-                responsiveUnder: 940,
-                maxRatio: 1,
-                hideOver: 100000,
-                skin: 'noskin',
-                navPrevNext: false,
-                thumbnailNavigation: 'disabled',
-                allowRestartOnResize: true,
-                width: 940,
-                skinsPath: '{{_var.base}}/images/slider/skins/'
-            });
-
-        });
+		});
     });
 
-})(jQuery);
-</script>
-<script>
-/*
-		document.onkeydown = function(e) {
-			if(e.keyCode == 123) {
-			 return false;
-			}
-			if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)){
-			 return false;
-			}
-			if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)){
-			 return false;
-			}
-			if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)){
-			 return false;
-			}
 
-			if(e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)){
-			 return false;
-			}      
-		}
-		*/
+
+/*
+        document.onkeydown = function(e) {
+            if(e.keyCode == 123) {
+             return false;
+            }
+            if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)){
+             return false;
+            }
+            if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)){
+             return false;
+            }
+            if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)){
+             return false;
+            }
+
+            if(e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)){
+             return false;
+            }
+        }
+        */
+
 </script>
 
 </html>

@@ -662,7 +662,19 @@
 		}
 	})
 
-
+		$('#slider').layerSlider({
+			sliderVersion: '6.0.0',
+			type: 'fullwidth',
+			responsiveUnder: 940,
+			maxRatio: 1,
+			hideOver: 100000,
+			skin: 'noskin',
+			navPrevNext: false,
+			thumbnailNavigation: 'disabled',
+			allowRestartOnResize: true,
+			width: 940,
+			skinsPath: '{{_var.base}}/images/slider/skins/'
+		});
 
 	  
 	}
