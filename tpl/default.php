@@ -106,34 +106,34 @@
 			<div class="row">
 				<div class="col-md-12 col-lg-6">
 					<div class="row">
+						<wb-foreach wb="table=news&limit=1&sort=data:d" wb-filter="{'active':'on','type':'news'}">
 						<div class="thumbnail-angle-one overflow-hidden position-relative bg-secondary pt-50 px-50 pb-100 text-center flat-large icon-primary color-white">
-							<span>
-								<i class="flaticon-home"></i>
+							<span class="d-block">
+								<img data-src='/thumbc/300x300/src/{{images.0.img}}' class="rounded-circle pc-50" />
 							</span>
-							<h4 class="my-30 color-white">Looking for the new home?</h4>
-							<p>Placerat mi auctor ridiculus sodales mauris cras odio non sociosquse gravida dignissim dictum elementum porta pharetra
-								ultricies cras velit vel sit justo dictum. Pharetra dapibus vehicula amet suscipit arcu, consequat tortor tristique
-								hac dolor. Dictum potenti molestie pellentesque lorem ornare volutpat.</p>
+							<h4 class="my-30 color-white">{{header}}</h4>
+							<p>{{wbGetWords({{text}},50)}}</p>
 							<div class="btn-position x-center">
-								<a class="btn btn-primary position-relative" href="index-7.html#">Read More</a>
+								<a class="btn btn-primary position-relative" href="/news">Все новости</a>
 							</div>
 						</div>
+						</wb-foreach>
 					</div>
 				</div>
 				<div class="col-md-12 col-lg-6">
 					<div class="row">
+						<wb-foreach wb="table=news&limit=1&sort=data:d" wb-filter="{'active':'on','type':'article'}">
 						<div class="thumbnail-angle-two overflow-hidden position-relative bg-dark pt-50 px-50 pb-100 mt-md-50 text-center flat-large icon-primary color-white">
-							<span>
-								<i class="flaticon-house"></i>
+							<span class="d-block">
+								<img data-src='/thumbc/300x300/src/{{images.0.img}}' class="rounded-circle pc-50" />
 							</span>
-							<h4 class="my-30 color-white">Want to sell your home?</h4>
-							<p>Placerat mi auctor ridiculus sodales mauris cras odio non sociosquse gravida dignissim dictum elementum porta pharetra
-								ultricies cras velit vel sit justo dictum. Pharetra dapibus vehicula amet suscipit arcu, consequat tortor tristique
-								hac dolor. Dictum potenti molestie pellentesque lorem ornare volutpat.</p>
+							<h4 class="my-30 color-white">{{header}}</h4>
+							<p>{{wbGetWords({{text}},50)}}</p>
 							<div class="btn-position x-center">
-								<a class="btn btn-primary position-relative" href="index-7.html#">Read More</a>
+								<a class="btn btn-primary position-relative" href="/articles">Все статьи</a>
 							</div>
 						</div>
+						</wb-foreach>
 					</div>
 				</div>
 			</div>
@@ -1175,33 +1175,6 @@
 			</div>
 		</div>
 	</section>
-	<!-- Popular City End
-==================================================================-->
-	<!-- Best Offer Start
-==================================================================-->
-
-	<!-- Best Offer End
-==================================================================-->
-	<!-- Home Loan Start
-==================================================================-->
-	<div style="background: url({{_var.base}}/images/background/11.jpg) top center /cover; padding: 150px 0;">
-		<div class="container">
-			<div class="row" style="min-height: 50px;">
-				<div class="col-md-12 col-lg-5">
-					<div class="loan color-secondary bg-white py-40 px-30">
-						<h2>Need a Home Loan?</h2>
-						<h3 class="mb-20 color-primary">Get Pre-Approved</h3>
-						<p>Etiam dictumst amet arcu senects sagit felis ultrice ligula magna class platea pretium molest ridiculu gravida lorem
-							sceleris taciti diam cursus nullam luctu etiam proin imper nisi laoreet neque.</p>
-					</div>
-
-				</div>
-				<div class="col align-self-end">
-					<a class="btn btn-primary position-relative mt-md-30" href="index-7.html#">Get Pre-Approved Now</a>
-				</div>
-			</div>
-		</div>
-	</div>
 
 	<wb-include wb="tpl=footer.inc.php" />
 	<wb-include wb="tpl=scripts.inc.php" />
