@@ -109,10 +109,10 @@
 						<wb-foreach wb="table=news&limit=1&sort=data:d" wb-filter="{'active':'on','type':'news'}">
 						<div class="thumbnail-angle-one overflow-hidden position-relative bg-secondary pt-50 px-50 pb-100 text-center flat-large icon-primary color-white">
 							<span class="d-block">
-								<img data-src='/thumbc/300x300/src/{{images.0.img}}' class="rounded-circle pc-50" />
+								<img data-src='/thumbc/300x300/src/{{images.0.img}}' class="rounded-circle pc-30" />
 							</span>
 							<h4 class="my-30 color-white">{{header}}</h4>
-							<p>{{wbGetWords({{text}},50)}}</p>
+							<p>{{wbGetWords({{text}},20)}}</p>
 							<div class="btn-position x-center">
 								<a class="btn btn-primary position-relative" href="/news">Все новости</a>
 							</div>
@@ -125,10 +125,10 @@
 						<wb-foreach wb="table=news&limit=1&sort=data:d" wb-filter="{'active':'on','type':'article'}">
 						<div class="thumbnail-angle-two overflow-hidden position-relative bg-dark pt-50 px-50 pb-100 mt-md-50 text-center flat-large icon-primary color-white">
 							<span class="d-block">
-								<img data-src='/thumbc/300x300/src/{{images.0.img}}' class="rounded-circle pc-50" />
+								<img data-src='/thumbc/300x300/src/{{images.0.img}}' class="rounded-circle pc-30" />
 							</span>
 							<h4 class="my-30 color-white">{{header}}</h4>
-							<p>{{wbGetWords({{text}},50)}}</p>
+							<p>{{wbGetWords({{text}},20)}}</p>
 							<div class="btn-position x-center">
 								<a class="btn btn-primary position-relative" href="/articles">Все статьи</a>
 							</div>

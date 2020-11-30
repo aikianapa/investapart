@@ -6,6 +6,13 @@
     width:auto;
 }
 
+.lh-30 {
+    line-height: 30px;
+}
+
+.pc-30 {
+    width: 30%;
+}
 .pc-50 {
     width:50%;
 }
