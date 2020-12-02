@@ -81,6 +81,12 @@ class unitsClass extends cmsFormsClass
                 $res = wbItemSave('objects', $item);
             }
         } else {
+            // count objects
+            $objects = wbItemList('objects', ['filter' => ['active' => 'on']]);
+            $data['count_objects'] = $objects['count'];
+            // ===
+            $data['count_units'] = $units->count();
+
             $item = wbItemRead("admin", "complex_data");
             $item = array_merge($item, $data);
             wbItemSave("admin", $item);

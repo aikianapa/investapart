@@ -143,63 +143,59 @@
 =========================================================================-->
 	<!-- About us Start
 ==================================================================-->
-	<section>
+	<section id="home1">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 col-lg-7 col-xl-6">
 					<div class="side-title mb-30 pr-30">
-						<span class="small-title color-primary position-relative line-primary">Real Estate Market Leader</span>
-						<h2 class="title mb-20 color-secondary">We're is this business since
-							<span class="color-primary">1981</span> and we provide the best real estate services</h2>
+						<span class="small-title color-primary position-relative line-primary" 
+						wb-if='"{{prop.data.subhead.active}}"=="on"'>
+							{{prop.data.subhead.name}}
+						</span>
+						<h3 class="title mb-20 color-secondary">{{header}}</h3>
 					</div>
-					<p>Vestibulum suspendisse ridiculus. Hac duis cursus orci quis mus. Volutp sodale primis litora ad consequat cras sapien
-						quam Feugiat cubilia Sagittis lacus dignis Feugiat ultricie curabitur aliquet sapien elementum scelerisque lacinia
-						consectet odio ad sollicitudin lectus venenatis lacus.</p>
-					<ul class="list-half icon-primary my-20 d-table">
-						<li>
-							<i class="fa fa-check"></i> High Quality Property</li>
-						<li>
-							<i class="fa fa-check"></i> 100% Satisfaction Guarantee</li>
-						<li>
-							<i class="fa fa-check"></i> Quality Control System</li>
-						<li>
-							<i class="fa fa-check"></i> unlimited real estate property</li>
-						<li>
-							<i class="fa fa-check"></i> Accurate dealing Processes</li>
-						<li>
-							<i class="fa fa-check"></i> Professional and Qualified</li>
-					</ul>
-					<p>Augue nisi nec primis molestie mollis quam convallis rhoncus taciti urna curabit arcu pulvinar Sed feugiat nullam nonum
-						element montes nec faucibus Rhoncus. Viverra curae torquent penatibus tempus nullam dignissim.</p>
-					<a class="btn btn-primary mt-30" href="index-7.html#">Read More</a>
+					{{text}}
+					<a class="btn btn-primary mt-30" href="index-7.html#"
+					wb-if='"{{prop.data.link.active}}"=="on"'>
+					{{prop.data.link.name}}
+					</a>
+
 				</div>
+					<wb-jq wb="	$dom->find('ul')->addClass('list-half icon-primary my-20 d-table');
+								$dom->find('ul li')->prepend('<i></i>');
+								$dom->find('ul li i')->addClass('fa fa-check');" />
+
 				<div class="col-md-12 col-lg-5 col-xl-6">
 					<div class="fact-counter achievement mb-50">
 						<div class="row">
+							<wb-data wb="table=admin&item=complex_data">
 							<div class="col-md-6 col-lg-6">
 								<div class="counter count wow">
 									<div class="counter-point d-inline-block">
-										<h2 class="count-num color-primary display-4" data-speed="3000" data-stop="1250">0</h2>
+										<h2 class="count-num color-primary display-4" data-speed="3000" data-stop="{{count_units}}">0</h2>
 									</div>
-									<h3 class="achievement-title color-secondary">Properties Listed</h3>
+									<h3 class="achievement-title color-secondary">Апартаментов</h3>
 								</div>
 							</div>
 							<div class="col-md-6 col-lg-6">
 								<div class="counter count wow">
 									<div class="counter-point d-inline-block">
-										<h2 class="count-num color-primary display-4" data-speed="3000" data-stop="583">0</h2>
+										<h2 class="count-num color-primary display-4" data-speed="3000" data-stop="{{count_objects}}">0</h2>
 									</div>
-									<h3 class="achievement-title color-secondary">Properties Sold</h3>
+									<h3 class="achievement-title color-secondary">Комплексов</h3>
 								</div>
 							</div>
+							</wb-data>
 						</div>
 					</div>
 					<div class="position-relative">
-						<img src="{{_var.base}}/images/about/2.jpg" alt="Image not found!">
+						<img src="/thumbc/870x665/src/{{images.0.img}}" alt="{{header}}">
 						<div class="bg-primary position-absolute color-white" style="display: inline-block; width: 180px; height: auto; padding: 40px 20px; bottom: -35px; left: 50px;">
-							<h5 class="color-white">Search Bitter From Anyplace </h5>
+							<h5 class="color-white">
+								Перейти в каталог
+							</h5>
 
-							<a class="btn-round mt-20" href="index-7.html#">
+							<a class="btn-round mt-20" href="/catalog">
 								<i class="fa fa-angle-right"></i>
 							</a>
 						</div>
@@ -209,59 +205,11 @@
 		</div>
 	</section>
 	<!-- About us End
-==================================================================-->
-	<!-- video start
-==================================================================-->
-	<div class="p-0">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12 col-lg-12">
-					<div class="bg-white">
-						<div class="row">
-							<div class="col-md-12 col-lg-12">
-								<div class="contact-dots" data-dots=""></div>
-								<div class="position-relative">
-									<img class="z-index-1 position-relative" src="{{_var.base}}/images/others/21.jpg" alt="Image not found !">
-									<div class="video-shadow xy-center z-index-1">
-										<div class="video">
-											<a data-fancybox="" class="video-popup bg-primary color-white" href="https://www.youtube.com/watch?v=8NXLyGiShjs">
-												<i class="fa fa-play" aria-hidden="true"></i>
-											</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- video end
-==================================================================-->
-	<!-- Partners Start
-==================================================================-->
-	<div class="bg-secondary" style="padding-top: 330px; padding-bottom: 240px;  margin-top: -250px;">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12 col-lg-12">
-					<div class="owl-carousel partners-two slide-5">
-						<img src="{{_var.base}}/images/partner/1.png" alt="Image not found!">
-						<img src="{{_var.base}}/images/partner/2.png" alt="Image not found!">
-						<img src="{{_var.base}}/images/partner/3.png" alt="Image not found!">
-						<img src="{{_var.base}}/images/partner/4.png" alt="Image not found!">
-						<img src="{{_var.base}}/images/partner/5.png" alt="Image not found!">
-						<img src="{{_var.base}}/images/partner/6.png" alt="Image not found!">
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- Partners End
+
 ==================================================================-->
 	<!-- Property Looking Start
 ==================================================================-->
-	<div class="looking-property" style="margin-top: -160px;">
+	<div class="looking-property">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 col-lg-12">
@@ -326,8 +274,8 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="main-title w-75 mx-auto d-table text-center mb-30">
-						<span class="small-title color-primary position-relative line-2-primary">Find Out the Best One</span>
-						<h2 class="title mb-20 color-secondary">Featured Properties</h2>
+						<span class="small-title color-primary position-relative line-2-primary">Выбирайте лучшее</span>
+						<h2 class="title mb-20 color-secondary">Новые предложения</h2>
 						<span class="sub-title">Congue commodo ipsum, risus urna nisi. Primis velit turpis sollicitudin. Felis aptent sagittis aliquet turpis et tristique
 							montes vestibulum rutrum. Scelerisque viverra ac ridiculus enim. Curabitur.</span>
 					</div>

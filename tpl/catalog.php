@@ -104,7 +104,7 @@
 
                                             <div class="form-group col-lg-6 col-md-6 col-6 pt-15">
                                                 <div class="price_range">
-                                                    <div class="price-filter" wb-data="table=admin&item=complex_data">
+                                                    <div class="price-filter">
                                                         <wb-data wb='table=admin&item=complex_data'>
                                                             <span>
                                                                 <input class="filter_range" type="text" name="square__minmax" dimension="&nbsp;кв.м" value="{{square_min * 1}}; {{square_max * 1}}"
@@ -117,7 +117,7 @@
 
                                             <div class="form-group col-lg-6 col-md-6 col-6 pt-15">
                                                 <div class="price_range">
-                                                    <div class="price-filter" wb-data="table=admin&item=complex_data">
+                                                    <div class="price-filter">
                                                         <wb-data wb='table=admin&item=complex_data'>
                                                             <span>
                                                                 <input class="filter_range" type="text" name="price__minmax" dimension="&nbsp;₽" step="10000" value="{{price_min * 1}}; {{price_max * 1}}" />
