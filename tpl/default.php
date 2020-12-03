@@ -275,47 +275,47 @@
 				<div class="col-lg-12">
 					<div class="main-title w-75 mx-auto d-table text-center mb-30">
 						<span class="small-title color-primary position-relative line-2-primary">Выбирайте лучшее</span>
-						<h2 class="title mb-20 color-secondary">Новые предложения</h2>
-						<span class="sub-title">Congue commodo ipsum, risus urna nisi. Primis velit turpis sollicitudin. Felis aptent sagittis aliquet turpis et tristique
-							montes vestibulum rutrum. Scelerisque viverra ac ridiculus enim. Curabitur.</span>
+						<h2 class="title mb-20 color-secondary">Наши комплексы</h2>
+						<span class="sub-title">Выбирите комплекс в наиболее удобном для вас районе города из нашего каталога. Для вас мы отобрали предложения от надёжных застройщиков.</span>
 					</div>
 				</div>
 				<div class="col-lg-12">
 					<div class="owl-carousel slide-3 owl-nav-side owl-dots-none mt-30 owl-loaded owl-drag">
-						<div class="property-item">
+					<wb-foreach wb-ajax="/api/query/objects/?active=on&__options=sort=_created:d;limit=4;trigger=beforeItemShow">
+					<div class="property-item">
 							<div class="property-img position-relative overflow-hidden overlay-secondary-4">
-								<img src="{{_var.base}}/images/property/1.jpg" alt="image">
-								<span class="thum-category category-1 bg-secondary color-white z-index-1 px-15">Featured</span>
+								<img src="/thumbc/725x635/src/{{images.0.img}}" alt="image">
+								<span class="thum-category category-1 bg-secondary color-white z-index-1 px-15">от {{price_min}}</span>
 								<ul class="hover-option position-absolute icon-white z-index-1">
 									<li>
-										<a data-toggle="tooltip" data-placement="top" title="Wishlist" href="index-7.html#">
+										<a data-toggle="tooltip" data-placement="top" title="В избранное" href="#">
 											<i class="fa fa-heart-o" aria-hidden="true"></i>
 										</a>
 									</li>
 									<li>
-										<a data-toggle="tooltip" data-placement="top" title="Compare" href="index-7.html#">
-											<i class="fa fa-random" aria-hidden="true"></i>
+										<a data-toggle="tooltip" data-placement="top" title="Подробно" href="/object/{{id}}/{{wbFurlGenerate({{name}})}}/">
+											<i class="fa fa-list" aria-hidden="true"></i>
 										</a>
 									</li>
 								</ul>
 								<div class="meta-property icon-primary color-white z-index-1">
 									<ul>
 										<li>
-											<i class="fa fa-calendar"></i> 06/27/2020</li>
+											<i class="fa fa-calendar"></i> {{quart}}/{{year}}</li>
 										<li>
 											<i class="fa fa-user"></i> James Bond</li>
 									</ul>
 								</div>
 							</div>
 							<div class="property-content bg-white pt-30 pb-50 px-30">
-								<a class="color-secondary mb-5" href="single-property.html">
-									<h4>park Avanue Apartment.</h4>
-								</a>
+								<a class="color-secondary mb-5" href="/object/{{id}}/{{wbFurlGenerate({{name}})}}/">
+									<h4>{{name}}</h4>
+
 								<span class="address icon-primary f-14">
-									<i class="fa fa-map-marker"></i>366 Glenmore Ave, Brooklyn, USA.</span>
+									<i class="fa fa-map-marker"></i>{{address}}</span>
 								<ul class="about-property list-half icon-primary d-table f-14 mb-30 mt-20">
 									<li>
-										<i class="flaticon-fit-screen"></i>200 sqft</li>
+										<i class="flaticon-fit-screen"></i>{{square_min}} - {{square_max}}</li>
 									<li>
 										<i class="flaticon-hotel"></i>3 Bedrooms</li>
 									<li>
@@ -323,269 +323,12 @@
 									<li>
 										<i class="flaticon-garage"></i>1 Garage</li>
 								</ul>
-								<div class="property-cost color-white list-half w-100">
-									<ul>
-										<li>For Rent</li>
-										<li>1.8k
-											<sub>/Month</sub>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-
-						<div class="property-item">
-							<div class="property-img position-relative overflow-hidden overlay-secondary-4">
-								<img src="{{_var.base}}/images/property/2.jpg" alt="image">
-								<span class="thum-category category-1 bg-secondary color-white z-index-1 px-15">Featured</span>
-								<ul class="hover-option position-absolute icon-white z-index-1">
-									<li>
-										<a data-toggle="tooltip" data-placement="top" title="Wishlist" href="index-7.html#">
-											<i class="fa fa-heart-o" aria-hidden="true"></i>
-										</a>
-									</li>
-									<li>
-										<a data-toggle="tooltip" data-placement="top" title="Compare" href="index-7.html#">
-											<i class="fa fa-random" aria-hidden="true"></i>
-										</a>
-									</li>
-								</ul>
-								<div class="meta-property icon-primary color-white z-index-1">
-									<ul>
-										<li>
-											<i class="fa fa-calendar"></i> 06/27/2020</li>
-										<li>
-											<i class="fa fa-user"></i> James Bond</li>
-									</ul>
-								</div>
-							</div>
-							<div class="property-content bg-white pt-30 pb-50 px-30">
-								<a class="color-secondary mb-5" href="single-property.html">
-									<h4>Villa on Grand Avenue</h4>
 								</a>
-								<span class="address icon-primary f-14">
-									<i class="fa fa-map-marker"></i>801 Rosedale Ave SE, Atlanta, USA.</span>
-								<ul class="about-property list-half icon-primary d-table f-14 mb-30 mt-20">
-									<li>
-										<i class="flaticon-fit-screen"></i>300 sqft</li>
-									<li>
-										<i class="flaticon-hotel"></i>5 Bedrooms</li>
-									<li>
-										<i class="flaticon-bathtub"></i>4 Bathrooms</li>
-									<li>
-										<i class="flaticon-garage"></i>2 Garage</li>
-								</ul>
-								<div class="property-cost color-white list-half w-100">
-									<ul>
-										<li>For Sale</li>
-										<li>$ 530,000</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<div class="property-item">
-							<div class="property-img position-relative overflow-hidden overlay-secondary-4">
-								<img src="{{_var.base}}/images/property/3.jpg" alt="image">
-								<span class="thum-category category-1 bg-secondary color-white z-index-1 px-15">Featured</span>
-								<ul class="hover-option position-absolute icon-white z-index-1">
-									<li>
-										<a data-toggle="tooltip" data-placement="top" title="Wishlist" href="index-7.html#">
-											<i class="fa fa-heart-o" aria-hidden="true"></i>
-										</a>
-									</li>
-									<li>
-										<a data-toggle="tooltip" data-placement="top" title="Compare" href="index-7.html#">
-											<i class="fa fa-random" aria-hidden="true"></i>
-										</a>
-									</li>
-								</ul>
-								<div class="meta-property icon-primary color-white z-index-1">
-									<ul>
-										<li>
-											<i class="fa fa-calendar"></i> 06/27/2020</li>
-										<li>
-											<i class="fa fa-user"></i> James Bond</li>
-									</ul>
-								</div>
-							</div>
-							<div class="property-content bg-white pt-30 pb-50 px-30">
-								<a class="color-secondary mb-5" href="single-property.html">
-									<h4>Villa on Grand Avenue</h4>
-								</a>
-								<span class="address icon-primary f-14">
-									<i class="fa fa-map-marker"></i>14523 Carowinds Blvd, Charlotte, USA.</span>
-								<ul class="about-property list-half icon-primary d-table f-14 mb-30 mt-20">
-									<li>
-										<i class="flaticon-fit-screen"></i>300 sqft</li>
-									<li>
-										<i class="flaticon-hotel"></i>5 Bedrooms</li>
-									<li>
-										<i class="flaticon-bathtub"></i>4 Bathrooms</li>
-									<li>
-										<i class="flaticon-garage"></i>2 Garage</li>
-								</ul>
-								<div class="property-cost color-white list-half w-100">
-									<ul>
-										<li>For Sale</li>
-										<li>$ 530,000</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<div class="property-item">
-							<div class="property-img position-relative overflow-hidden overlay-secondary-4">
-								<img src="{{_var.base}}/images/property/4.jpg" alt="image">
-								<span class="thum-category category-1 bg-secondary color-white z-index-1 px-15">Featured</span>
-								<ul class="hover-option position-absolute icon-white z-index-1">
-									<li>
-										<a data-toggle="tooltip" data-placement="top" title="Wishlist" href="index-7.html#">
-											<i class="fa fa-heart-o" aria-hidden="true"></i>
-										</a>
-									</li>
-									<li>
-										<a data-toggle="tooltip" data-placement="top" title="Compare" href="index-7.html#">
-											<i class="fa fa-random" aria-hidden="true"></i>
-										</a>
-									</li>
-								</ul>
-								<div class="meta-property icon-primary color-white z-index-1">
-									<ul>
-										<li>
-											<i class="fa fa-calendar"></i> 06/27/2020</li>
-										<li>
-											<i class="fa fa-user"></i> James Bond</li>
-									</ul>
-								</div>
-							</div>
-							<div class="property-content bg-white pt-30 pb-50 px-30">
-								<a class="color-secondary mb-5" href="single-property.html">
-									<h4>park Avanue Apartment.</h4>
-								</a>
-								<span class="address icon-primary f-14">
-									<i class="fa fa-map-marker"></i>40 Tower Avenue, Melbourne, Australia.</span>
-								<ul class="about-property list-half icon-primary d-table f-14 mb-30 mt-20">
-									<li>
-										<i class="flaticon-fit-screen"></i>200 sqft</li>
-									<li>
-										<i class="flaticon-hotel"></i>3 Bedrooms</li>
-									<li>
-										<i class="flaticon-bathtub"></i>2 Bathrooms</li>
-									<li>
-										<i class="flaticon-garage"></i>1 Garage</li>
-								</ul>
-								<div class="property-cost color-white list-half w-100">
-									<ul>
-										<li>For Rent</li>
-										<li>1.8k
-											<sub>/Month</sub>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-
-						<div class="property-item">
-							<div class="property-img position-relative overflow-hidden overlay-secondary-4">
-								<img src="{{_var.base}}/images/property/5.jpg" alt="image">
-								<span class="thum-category category-1 bg-secondary color-white z-index-1 px-15">Featured</span>
-								<ul class="hover-option position-absolute icon-white z-index-1">
-									<li>
-										<a data-toggle="tooltip" data-placement="top" title="Wishlist" href="index-7.html#">
-											<i class="fa fa-heart-o" aria-hidden="true"></i>
-										</a>
-									</li>
-									<li>
-										<a data-toggle="tooltip" data-placement="top" title="Compare" href="index-7.html#">
-											<i class="fa fa-random" aria-hidden="true"></i>
-										</a>
-									</li>
-								</ul>
-								<div class="meta-property icon-primary color-white z-index-1">
-									<ul>
-										<li>
-											<i class="fa fa-calendar"></i> 06/27/2020</li>
-										<li>
-											<i class="fa fa-user"></i> James Bond</li>
-									</ul>
-								</div>
-							</div>
-							<div class="property-content bg-white pt-30 pb-50 px-30">
-								<a class="color-secondary mb-5" href="single-property.html">
-									<h4>park Avanue Apartment.</h4>
-								</a>
-								<span class="address icon-primary f-14">
-									<i class="fa fa-map-marker"></i>Urbis Building Cathedral Gardens, UK</span>
-								<ul class="about-property list-half icon-primary d-table f-14 mb-30 mt-20">
-									<li>
-										<i class="flaticon-fit-screen"></i>200 sqft</li>
-									<li>
-										<i class="flaticon-hotel"></i>6 Bedrooms</li>
-									<li>
-										<i class="flaticon-bathtub"></i>4 Bathrooms</li>
-									<li>
-										<i class="flaticon-garage"></i>1 Garage</li>
-								</ul>
-								<div class="property-cost color-white list-half w-100">
-									<ul>
-										<li>For Rent</li>
-										<li>1.2k
-											<sub>/Month</sub>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<div class="property-item">
-							<div class="property-img position-relative overflow-hidden overlay-secondary-4">
-								<img src="{{_var.base}}/images/property/6.jpg" alt="image">
-								<span class="thum-category category-1 bg-secondary color-white z-index-1 px-15">Featured</span>
-								<ul class="hover-option position-absolute icon-white z-index-1">
-									<li>
-										<a data-toggle="tooltip" data-placement="top" title="Wishlist" href="index-7.html#">
-											<i class="fa fa-heart-o" aria-hidden="true"></i>
-										</a>
-									</li>
-									<li>
-										<a data-toggle="tooltip" data-placement="top" title="Compare" href="index-7.html#">
-											<i class="fa fa-random" aria-hidden="true"></i>
-										</a>
-									</li>
-								</ul>
-								<div class="meta-property icon-primary color-white z-index-1">
-									<ul>
-										<li>
-											<i class="fa fa-calendar"></i> 06/27/2020</li>
-										<li>
-											<i class="fa fa-user"></i> James Bond</li>
-									</ul>
-								</div>
-							</div>
-							<div class="property-content bg-white pt-30 pb-50 px-30">
-								<a class="color-secondary mb-5" href="single-property.html">
-									<h4>Villa on Grand Avenue</h4>
-								</a>
-								<span class="address icon-primary f-14">
-									<i class="fa fa-map-marker"></i>11-13 Whitehall, London SW1A 2DD, UK</span>
-								<ul class="about-property list-half icon-primary d-table f-14 mb-30 mt-20">
-									<li>
-										<i class="flaticon-fit-screen"></i>500 sqft</li>
-									<li>
-										<i class="flaticon-hotel"></i>8 Bedrooms</li>
-									<li>
-										<i class="flaticon-bathtub"></i>4 Bathrooms</li>
-									<li>
-										<i class="flaticon-garage"></i>2 Garage</li>
-								</ul>
-								<div class="property-cost color-white list-half w-100">
-									<ul>
-										<li>For Sale</li>
-										<li>$ 530,000</li>
-									</ul>
-								</div>
 							</div>
 						</div>
 
 					</div>
+					</wb-foreach>
 				</div>
 			</div>
 		</div>
@@ -599,182 +342,55 @@
 			<div class="row">
 				<div class="col-md-12 col-lg-12">
 					<div class="main-title w-75 mx-auto d-table text-center mb-30">
-						<span class="small-title color-primary position-relative line-2-primary">New Arrival Collections</span>
-						<h2 class="title mb-20 color-secondary">Recent Properties</h2>
+						<span class="small-title color-primary position-relative line-2-primary">Обратите внимание</span>
+						<h2 class="title mb-20 color-secondary">Новинки каталога</h2>
 						<span class="sub-title">Congue commodo ipsum, risus urna nisi. Primis velit turpis sollicitudin. Felis aptent sagittis aliquet turpis et tristique
 							montes vestibulum rutrum. Scelerisque viverra ac ridiculus enim. Curabitur.</span>
 					</div>
 				</div>
-				<div class="col-md-12 col-lg-6">
-					<div class="property-thumbnail mt-30">
-						<div class="property-img position-relative overflow-hidden overlay-secondary-4">
-							<img src="{{_var.base}}/images/property/7.jpg" alt="image">
-							<div class="thumbnail-content z-index-1 color-white-a color-white">
-								<span class="thum-category category-1 bg-secondary color-white z-index-1 px-15">For Sale</span>
-								<ul class="hover-option position-absolute icon-white z-index-1">
-									<li>
-										<a data-toggle="tooltip" data-placement="top" title="Wishlist" href="index-7.html#">
-											<i class="fa fa-heart-o" aria-hidden="true"></i>
-										</a>
-									</li>
-									<li>
-										<a data-toggle="tooltip" data-placement="top" title="Compare" href="index-7.html#">
-											<i class="fa fa-random" aria-hidden="true"></i>
-										</a>
-									</li>
-								</ul>
-								<div class="hover-content py-30 px-20 overlay-hover-gradient">
-									<div class="thumbnail-title pb-10 z-index-1 position-relative">
-										<span class="thumbnail-price bg-white color-secondary px-15 mb-10 d-table">$ 12000</span>
-										<a class="color-secondary mb-5" href="single-property.html">
-											<h4>Villa on Grand Avenue</h4>
-										</a>
-										<span class="address icon-primary f-14">
-											<i class="fa fa-map-marker"></i>11-13 Whitehall, London SW1A 2DD, UK</span>
-									</div>
-									<ul class="about-property icon-primary d-table f-14 z-index-1 position-relative">
-										<li>
-											<span class="color-primary">400</span> sqft</li>
-										<li>
-											<span class="color-primary">3</span> Bedrooms</li>
-										<li>
-											<span class="color-primary">2</span> Bathrooms</li>
-										<li>
-											<span class="color-primary">1</span> Garage</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-12 col-lg-6">
-					<div class="property-thumbnail mt-30">
-						<div class="property-img position-relative overflow-hidden overlay-secondary-4">
-							<img src="{{_var.base}}/images/property/8.jpg" alt="image">
-							<div class="thumbnail-content z-index-1 color-white-a color-white">
-								<span class="thum-category category-1 bg-secondary color-white z-index-1 px-15">For Rent</span>
-								<ul class="hover-option position-absolute icon-white z-index-1">
-									<li>
-										<a data-toggle="tooltip" data-placement="top" title="Wishlist" href="index-7.html#">
-											<i class="fa fa-heart-o" aria-hidden="true"></i>
-										</a>
-									</li>
-									<li>
-										<a data-toggle="tooltip" data-placement="top" title="Compare" href="index-7.html#">
-											<i class="fa fa-random" aria-hidden="true"></i>
-										</a>
-									</li>
-								</ul>
-								<div class="hover-content py-30 px-20 overlay-hover-gradient">
-									<div class="thumbnail-title pb-10 z-index-1 position-relative">
-										<span class="thumbnail-price bg-white color-secondary px-15 mb-10 d-table">1.2k
-											<sub>/Month</sub>
-										</span>
-										<a class="color-secondary mb-5" href="single-property.html">
-											<h4>park Avanue Apartment</h4>
-										</a>
-										<span class="address icon-primary f-14">
-											<i class="fa fa-map-marker"></i>Urbis Building Cathedral Gardens, UK</span>
-									</div>
-									<ul class="about-property icon-primary d-table f-14 z-index-1 position-relative">
-										<li>
-											<span class="color-primary">300</span> sqft</li>
-										<li>
-											<span class="color-primary">4</span> Bedrooms</li>
-										<li>
-											<span class="color-primary">2</span> Bathrooms</li>
-										<li>
-											<span class="color-primary">1</span> Garage</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-12 col-lg-6">
-					<div class="property-thumbnail mt-30">
-						<div class="property-img position-relative overflow-hidden overlay-secondary-4">
-							<img src="{{_var.base}}/images/property/9.jpg" alt="image">
-							<div class="thumbnail-content z-index-1 color-white-a color-white">
-								<span class="thum-category category-1 bg-secondary color-white z-index-1 px-15">For Sale</span>
-								<ul class="hover-option position-absolute icon-white z-index-1">
-									<li>
-										<a data-toggle="tooltip" data-placement="top" title="Wishlist" href="index-7.html#">
-											<i class="fa fa-heart-o" aria-hidden="true"></i>
-										</a>
-									</li>
-									<li>
-										<a data-toggle="tooltip" data-placement="top" title="Compare" href="index-7.html#">
-											<i class="fa fa-random" aria-hidden="true"></i>
-										</a>
-									</li>
-								</ul>
-								<div class="hover-content py-30 px-20 overlay-hover-gradient">
-									<div class="thumbnail-title pb-10 z-index-1 position-relative">
-										<span class="thumbnail-price bg-white color-secondary px-15 mb-10 d-table">$ 15200</span>
-										<a class="color-secondary mb-5" href="single-property.html">
-											<h4>Diamond Manor Apartment</h4>
-										</a>
-										<span class="address icon-primary f-14">
-											<i class="fa fa-map-marker"></i>40 Tower Avenue, Melbourne, Australia.</span>
-									</div>
-									<ul class="about-property icon-primary d-table f-14 z-index-1 position-relative">
-										<li>
-											<span class="color-primary">500</span> sqft</li>
-										<li>
-											<span class="color-primary">8</span> Bedrooms</li>
-										<li>
-											<span class="color-primary">4</span> Bathrooms</li>
-										<li>
-											<span class="color-primary">2</span> Garage</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+				<wb-foreach wb-ajax="/api/query/units/?active=on&__options=sort=_created:d;limit=4;trigger=beforeItemShow">
 				<div class="col-md-12 col-lg-6">
 					<div class="property-thumbnail mt-30">
 						<div class="property-img position-relative overflow-hidden overlay-secondary-4">
 							<img src="{{_var.base}}/images/property/2.jpg" alt="image">
 							<div class="thumbnail-content z-index-1 color-white-a color-white">
-								<span class="thum-category category-1 bg-secondary color-white z-index-1 px-15">For Sale</span>
+								<span class="thum-category category-1 bg-secondary color-white z-index-1 px-15"
+								wb-tree="item=types&branch=units->{{type}}&children=false"><wb>{{name}}</wb></span>
 								<ul class="hover-option position-absolute icon-white z-index-1">
 									<li>
-										<a data-toggle="tooltip" data-placement="top" title="Wishlist" href="index-7.html#">
+										<a data-toggle="tooltip" data-placement="top" title="В избранное" href="#">
 											<i class="fa fa-heart-o" aria-hidden="true"></i>
 										</a>
 									</li>
 									<li>
-										<a data-toggle="tooltip" data-placement="top" title="Compare" href="index-7.html#">
-											<i class="fa fa-random" aria-hidden="true"></i>
+										<a data-toggle="tooltip" data-placement="top" title="Подробно" href="/unit/{{id}}/">
+											<i class="fa fa-list" aria-hidden="true"></i>
 										</a>
 									</li>
 								</ul>
 								<div class="hover-content py-30 px-20 overlay-hover-gradient">
+									<a class="color-secondary mb-5" href="/unit/{{id}}/">
 									<div class="thumbnail-title pb-10 z-index-1 position-relative">
-										<span class="thumbnail-price bg-white color-secondary px-15 mb-10 d-table">$ 12000</span>
+										<span class="thumbnail-price bg-white color-secondary px-15 mb-10 d-table">{{price}}</span>
 										<a class="color-secondary mb-5" href="single-property.html">
-											<h4>Villa on Grand Avenue</h4>
+											<h4>{{name}}</h4>
 										</a>
 										<span class="address icon-primary f-14">
-											<i class="fa fa-map-marker"></i>11-13 Whitehall, London SW1A 2DD, UK</span>
+											<i class="fa fa-map-marker"></i>{{address}}</span>
 									</div>
 									<ul class="about-property icon-primary d-table f-14 z-index-1 position-relative">
 										<li>
-											<span class="color-primary">400</span> sqft</li>
+											Площадь <span class="color-primary">{{square}}</span> м<sup>2</sup></li>
 										<li>
-											<span class="color-primary">3</span> Bedrooms</li>
-										<li>
-											<span class="color-primary">2</span> Bathrooms</li>
-										<li>
-											<span class="color-primary">1</span> Garage</li>
+											Цена <span class="color-primary">{{price}}</span></li>
 									</ul>
+									</a>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
+				</wb-foreach>
 			</div>
 		</div>
 	</section>

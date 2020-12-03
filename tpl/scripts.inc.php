@@ -33,7 +33,6 @@
 			,"{{_var.base}}/js/jquery.slider.js"
 			,"{{_var.base}}/js/wow.js"
 			,"{{_var.base}}/js/custom.js"
-			,"{{_var.base}}/js/validate.js"
 
 		], 'scripts-ready', function() {
             custom_init();

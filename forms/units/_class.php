@@ -20,6 +20,10 @@ class unitsClass extends cmsFormsClass
     {
         $Item['district'] = wbCorrelation('objects', $Item['object'], 'district');
         $Item['metro'] = wbCorrelation('objects', $Item['object'], 'metro');
+        $Item['name'] = wbCorrelation('objects', $Item['object'], 'name');
+        $Item['address'] = wbCorrelation('objects', $Item['object'], 'address');
+
+
         $Item["image"] = wbGetItemImg($Item);
         if (isset($Item['price'])) {
             $Item['price'] = money_format('%.0n', intval($Item['price']));
