@@ -572,90 +572,11 @@
 			</div>
 		</div>
 	</section>
-	<!-- Top Agencies End
-==================================================================-->
-	<!-- Testimonials Start
-==================================================================-->
-	<section class="feedback overlay-black" style="background: url({{_var.base}}/images/background/18.jpg) center center /cover fixed;">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12 col-lg-12">
-					<div class="main-title w-50 mx-auto d-table color-white text-center mb-30">
-						<span class="small-title color-primary position-relative line-2-primary">Testimonial</span>
-						<h2 class="title mb-20 color-white">What Our Client's Say</h2>
-						<span class="sub-title">Sociis eget dui hendrerit urna felis euismod viverra. Inceptos habitasse augue quisque facilisis per. Nibh justo massa
-							suscipit.</span>
-					</div>
-				</div>
-				<div class="col-lg-12">
-					<div class="owl-carousel slide-2 mt-30">
-						<div class="feedback-item p-30 bg-secondary color-white">
-							<div class="feedback-details">
-								<p>Massa sapien nunc justo sem turpis nonummy Ullamcorpe suscipit ad auctor magnis ante eu aptent id sociis. Cursus
-									volutpat faucibus litora Dolor sollicitudin orci praesent penatibus.</p>
-							</div>
-							<div class="author-info mt-30">
-								<img src="{{_var.base}}/images/testimonial/1.jpg" alt="image">
-								<div class="author-name">
-									<h5 class="mb-5 color-primary">Jimmy Carry</h5>
-								</div>
-							</div>
-						</div>
-						<div class="feedback-item p-30 bg-secondary color-white">
-							<div class="feedback-details">
-								<p>Massa sapien nunc justo sem turpis nonummy Ullamcorpe suscipit ad auctor magnis ante eu aptent id sociis. Cursus
-									volutpat faucibus litora Dolor sollicitudin orci praesent penatibus.</p>
-							</div>
-							<div class="author-info mt-30">
-								<img src="{{_var.base}}/images/testimonial/2.jpg" alt="image">
-								<div class="author-name">
-									<h5 class="mb-5 color-primary">Lora Luis</h5>
-								</div>
-							</div>
-						</div>
-						<div class="feedback-item p-30 bg-secondary color-white">
-							<div class="feedback-details">
-								<p>Massa sapien nunc justo sem turpis nonummy Ullamcorpe suscipit ad auctor magnis ante eu aptent id sociis. Cursus
-									volutpat faucibus litora Dolor sollicitudin orci praesent penatibus.</p>
-							</div>
-							<div class="author-info mt-30">
-								<img src="{{_var.base}}/images/testimonial/3.jpg" alt="image">
-								<div class="author-name">
-									<h5 class="mb-5 color-primary">John Carter</h5>
-								</div>
-							</div>
-						</div>
-						<div class="feedback-item p-30 bg-secondary color-white">
-							<div class="feedback-details">
-								<p>Massa sapien nunc justo sem turpis nonummy Ullamcorpe suscipit ad auctor magnis ante eu aptent id sociis. Cursus
-									volutpat faucibus litora Dolor sollicitudin orci praesent penatibus.</p>
-							</div>
-							<div class="author-info mt-30">
-								<img src="{{_var.base}}/images/testimonial/4.jpg" alt="image">
-								<div class="author-name">
-									<h5 class="mb-5 color-primary">Ketty Perry</h5>
-								</div>
-							</div>
-						</div>
-						<div class="feedback-item p-30 bg-secondary color-white">
-							<div class="feedback-details">
-								<p>Massa sapien nunc justo sem turpis nonummy Ullamcorpe suscipit ad auctor magnis ante eu aptent id sociis. Cursus
-									volutpat faucibus litora Dolor sollicitudin orci praesent penatibus.</p>
-							</div>
-							<div class="author-info mt-30">
-								<img src="{{_var.base}}/images/testimonial/2.jpg" alt="image">
-								<div class="author-name">
-									<h5 class="mb-5 color-primary">Albert Cole</h5>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- Testimonials End
-==================================================================-->
+
+
+	<wb-include wb="tpl=testimonials.inc.php" />
+	
+<!--==================================================================-->
 	<!-- Popular City Start
 ==================================================================-->
 	<section class="gallery bg-gray">
