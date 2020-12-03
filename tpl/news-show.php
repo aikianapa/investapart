@@ -18,7 +18,7 @@
 		<wb-var wb-if='"{{type}}"=="news"' table="news" />
 		<wb-var wb-if='"{{type}}"=="article"' table="articles" />
         <wb-data wb="table=pages&item={{_var.table}}">
-            <div class="page-banner overlay-black" style="padding: 150px 0;background-image:url({{images.0.img}});">
+            <div class="page-banner overlay-black" style="padding: 150px 0;background-image:url(/thumbc/1920x600/src/{{images.0.img}});">
                 <div class="container h-100">
                     <div class="row h-100 align-items-center">
                         <div class="col-lg-12">
