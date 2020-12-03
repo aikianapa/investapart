@@ -58,7 +58,7 @@
                 <div class="col-md-12 col-lg-8">
                     <div class="blog-item">
                         <div class="blog-img position-relative post-content">
-                            <img src="{{images.0.img}}" alt="{{header}}">
+                            <img src="/thumb/770x770/src/{{images.0.img}}" alt="{{header}}">
                             <div class="date post-date float-left bg-gray mr-20 text-center color-secondary">
                                 <div class="py-10"><span
                                         class="d-block">{{strftime("%d",strtotime({{date}}))}}</span>{{strftime("%h",strtotime({{date}}))}}
