@@ -13,7 +13,7 @@
                 </div>
                 <div class="col-lg-12">
                     <div class="owl-carousel slide-2 mt-30" wb-tree="from=prop.data&children=false">
-                        <div class="feedback-item p-30 bg-secondary color-white">
+                        <div class="feedback-item p-30 bg-secondary color-white" wb-if='"{{active}}"=="on"'>
                             <div class="feedback-details">
                                 {{data.text}}
                             </div>
