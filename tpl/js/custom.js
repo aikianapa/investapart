@@ -41,7 +41,7 @@
 
 
 	var custom_init = function() {
-		
+	$('#loader').remove();
 	// Cache jQuery Selector
 	//----------------------------------------------------------------------------------
 	var $window   		= $(window),

@@ -14,9 +14,13 @@
 	==================================================================-->
     <!-- Title -->
     <title>{{header}}</title>
-
+    <link rel="stylesheet" type="text/css" href="/tpl/css/spinner.css">
     <!-- Favicon Icon -->
     <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
 </head>
 
+<div id="loader">
+    <div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    <h3>Загрузка...</h3>
+</div>
 </html>
