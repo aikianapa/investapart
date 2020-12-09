@@ -16,7 +16,7 @@
     <title>{{header}}</title>
     <link rel="stylesheet" type="text/css" href="/tpl/css/spinner.css">
     <!-- Favicon Icon -->
-    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="shortcut icon" type="image/png" href="favicon.png">
 </head>
 
 <div id="loader">
