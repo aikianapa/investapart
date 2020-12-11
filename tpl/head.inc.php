@@ -1,7 +1,7 @@
 <html>
-
+<!--  head.inc.php -->
 <head>
-    <!--===== Meta Tag =====-->
+
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="description" content="Fresher - Real Estate Template">
@@ -10,13 +10,10 @@
         content="business, property, directory, listing, real estate, Real estate template, realtor, developer, apartment, broker, real estate agency, map, company, agent, rent house">
     <meta name="author" content="root">
     <wb-var base="/tpl" />
-    <!--CSs Links
-	==================================================================-->
-    <!-- Title -->
+    <!-- Favicon Icon -->
+    <link rel="shortcut icon" type="image/png" href="/favicon.png">
     <title>{{header}}</title>
     <link rel="stylesheet" type="text/css" href="/tpl/css/spinner.css">
-    <!-- Favicon Icon -->
-    <link rel="shortcut icon" type="image/png" href="favicon.png">
 </head>
 
 <div id="loader">

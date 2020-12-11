@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<!-- object.php -->
 <wb-include wb="tpl=head.inc.php" />
 
 <body ___oncontextmenu___="return false;">
