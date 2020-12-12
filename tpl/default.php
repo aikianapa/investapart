@@ -189,7 +189,7 @@
 						</div>
 					</div>
 					<div class="position-relative">
-						<img src="/thumbc/870x665/src/{{images.0.img}}" alt="{{header}}">
+						<img data-src="/thumbc/870x665/src/{{images.0.img}}" alt="{{header}}">
 						<div class="bg-primary position-absolute color-white" style="display: inline-block; width: 180px; height: auto; padding: 40px 20px; bottom: -35px; left: 50px;">
 							<h5 class="color-white">
 								Перейти в каталог
@@ -224,7 +224,7 @@
 					<wb-foreach wb-ajax="/api/query/objects/?active=on&__options=sort=_created:d;limit=4;trigger=beforeItemShow">
 					<div class="property-item">
 							<div class="property-img position-relative overflow-hidden overlay-secondary-4">
-								<img src="/thumbc/725x635/src/{{images.0.img}}" alt="image">
+								<img data-src="/thumbc/725x635/src/{{images.0.img}}" alt="image">
 								<span class="thum-category category-1 bg-secondary color-white z-index-1 px-15">от {{price_min}}</span>
 								<ul class="hover-option position-absolute icon-white z-index-1">
 									<li>
@@ -292,7 +292,7 @@
 				<div class="col-md-12 col-lg-6">
 					<div class="property-thumbnail mt-30">
 						<div class="property-img position-relative overflow-hidden overlay-secondary-4">
-							<img src="{{_var.base}}/images/property/2.jpg" alt="image">
+							<img data-src="{{_var.base}}/images/property/2.jpg" alt="image">
 							<div class="thumbnail-content z-index-1 color-white-a color-white">
 								<span class="thum-category category-1 bg-secondary color-white z-index-1 px-15"
 								wb-tree="item=types&branch=units->{{type}}&children=false"><wb>{{name}}</wb></span>
@@ -355,7 +355,7 @@
 					<div class="row">
 						<div class="col-lg-12">
 							<div class="gallery-img overflow-hidden position-relative mt-30 overlay-secondary">
-								<img src="{{_var.base}}/images/gallery/1.jpg" alt="image">
+								<img data-src="{{_var.base}}/images/gallery/1.jpg" alt="image">
 								<div class="cities-info">
 									<h5>
 										<a class="color-white" href="index-7.html#">New York</a>
@@ -366,7 +366,7 @@
 						</div>
 						<div class="col-lg-12">
 							<div class="gallery-img overflow-hidden position-relative mt-30 overlay-secondary">
-								<img src="{{_var.base}}/images/gallery/2.jpg" alt="image">
+								<img data-src="{{_var.base}}/images/gallery/2.jpg" alt="image">
 								<div class="cities-info">
 									<h5>
 										<a class="color-white" href="index-7.html#">Las Vegas</a>
@@ -379,7 +379,7 @@
 				</div>
 				<div class="col-lg-5">
 					<div class="gallery-img overflow-hidden position-relative mt-30 overlay-secondary">
-						<img src="{{_var.base}}/images/gallery/3.jpg" alt="image">
+						<img data-src="{{_var.base}}/images/gallery/3.jpg" alt="image">
 						<div class="cities-info">
 							<h5>
 								<a class="color-white" href="index-7.html#">San Francisco</a>
@@ -388,7 +388,7 @@
 						</div>
 					</div>
 					<div class="gallery-img overflow-hidden position-relative mt-30 overlay-secondary">
-						<img src="{{_var.base}}/images/gallery/4.jpg" alt="image">
+						<img data-src="{{_var.base}}/images/gallery/4.jpg" alt="image">
 						<div class="cities-info">
 							<h5>
 								<a class="color-white" href="index-7.html#">California</a>
@@ -400,7 +400,7 @@
 				</div>
 				<div class="col-lg-3">
 					<div class="gallery-img overflow-hidden position-relative mt-30 overlay-secondary">
-						<img src="{{_var.base}}/images/gallery/6.jpg" alt="image">
+						<img data-src="{{_var.base}}/images/gallery/6.jpg" alt="image">
 						<div class="cities-info">
 							<h5>
 								<a class="color-white" href="index-7.html#">Melbourne</a>
@@ -409,7 +409,7 @@
 						</div>
 					</div>
 					<div class="gallery-img overflow-hidden position-relative mt-30 overlay-secondary">
-						<img src="{{_var.base}}/images/gallery/7.jpg" alt="image">
+						<img data-src="{{_var.base}}/images/gallery/7.jpg" alt="image">
 						<div class="cities-info">
 							<h5>
 								<a class="color-white" href="index-7.html#">Moscow</a>

@@ -9,9 +9,9 @@
                             <wb-foreach wb="from=data">
 							<div class="col-md-6 col-lg-3">
 								<div class="text-thumbnail text-center bg-secondary py-40 px-30 color-white color-white-a box-shadow-gray">
-									<a class="mb-20" href="index-7.html#">
+									<a class="mb-20" href="{{data.link}}">
 										<h4>Что такое<br>{{name}}</span></h4>
-									</a>
+
 									<p class="mb-20">{{data.text}}</p>
 									<span class="d-block bg-primary icon-white flat-small" wb-if='"{{data.image.0.img}}"==""'>
 										<i class="flaticon-rental"></i>
@@ -20,7 +20,7 @@
 									<span class="d-block icon-white flat-small" wb-if='"{{data.image.0.img}}">""'>
 										<img data-src="/thumbc/140x140/src/{{data.image.0.img}}" alt="{{name}}" class="rounded-circle" />
 									</span>
-
+									</a>
 								</div>
 							</div>
                             </wb-foreach>
