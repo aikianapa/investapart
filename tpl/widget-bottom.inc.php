@@ -1,4 +1,4 @@
-<!--  widget-bottom.inc.php -->
+
 <div class="patner-subscribe">
 	<div class="container">
 		<div class="row">

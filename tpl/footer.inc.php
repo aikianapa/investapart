@@ -1,5 +1,5 @@
 <html>
-<!--  footer.inc.php -->
+
 <wb-include wb="tpl=widget-bottom.inc.php" />
 
 <footer class="bg-secondary pb-50" style="margin-top: -233px; padding-top: 313px;">

@@ -1,5 +1,4 @@
 <html>
-<!--  head.inc.php -->
 <head>
 
     <meta charset="utf-8">

@@ -204,69 +204,9 @@
 			</div>
 		</div>
 	</section>
-	<!-- About us End
 
-==================================================================-->
-	<!-- Property Looking Start
-==================================================================-->
-	<div class="looking-property">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12 col-lg-12">
-					<div class="property-looking">
-						<div class="row">
-							<div class="col-md-6 col-lg-3">
-								<div class="text-thumbnail text-center bg-secondary py-40 px-30 color-white color-white-a box-shadow-gray">
-									<a class="mb-20" href="index-7.html#">
-										<h4>Modern Villa</h4>
-									</a>
-									<p class="mb-20">Fames elementum sollicitud pretiuma aenean consequat curabitur hendrerit.</p>
-									<span class="d-block bg-primary icon-white flat-small">
-										<i class="flaticon-house-2"></i>
-									</span>
-								</div>
-							</div>
-							<div class="col-md-6 col-lg-3">
-								<div class="text-thumbnail text-center bg-secondary py-40 px-30 mt-sm-30 color-white color-white-a box-shadow-gray">
-									<a class="mb-20" href="index-7.html#">
-										<h4>Family House</h4>
-									</a>
-									<p class="mb-20">Fames elementum sollicitud pretiuma aenean consequat curabitur hendrerit.</p>
-									<span class="d-block bg-primary icon-white flat-small">
-										<i class="flaticon-rental"></i>
-									</span>
-								</div>
-							</div>
-							<div class="col-md-6 col-lg-3">
-								<div class="text-thumbnail text-center bg-secondary py-40 px-30 mt-md-30 color-white color-white-a box-shadow-gray">
-									<a class="mb-20" href="index-7.html#">
-										<h4>Town House</h4>
-									</a>
-									<p class="mb-20">Fames elementum sollicitud pretiuma aenean consequat curabitur hendrerit.</p>
-									<span class="d-block bg-primary icon-white flat-small">
-										<i class="flaticon-hotel"></i>
-									</span>
-								</div>
-							</div>
-							<div class="col-md-6 col-lg-3">
-								<div class="text-thumbnail text-center bg-secondary py-40 px-30 mt-md-30 color-white color-white-a box-shadow-gray">
-									<a class="mb-20" href="index-7.html#">
-										<h4>Appartment</h4>
-									</a>
-									<p class="mb-20">Fames elementum sollicitud pretiuma aenean consequat curabitur hendrerit.</p>
-									<span class="d-block bg-primary icon-white flat-small">
-										<i class="flaticon-rental"></i>
-									</span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- Property Looking End
-==================================================================-->
+	<wb-include wb="tpl=widget-faq.inc.php" />
+
 	<!-- Feautred Properties Start
 =========================================================================-->
 	<section class="featured-properties">
