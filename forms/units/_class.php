@@ -7,6 +7,12 @@ class unitsClass extends cmsFormsClass
 {
     public function afterItemRead(&$Item)
     {
+        $object = wbItemRead('objects', $Item['object']);
+        $Item['district'] = $object['district'];
+        $Item['metro'] = $object['metro'];
+        $Item['name'] = $object['name'];
+        $Item['address'] =$object['address'];
+
         return $Item;
     }
 
@@ -18,11 +24,10 @@ class unitsClass extends cmsFormsClass
 
     public function beforeItemShow(&$Item)
     {
-        $Item['district'] = wbCorrelation('objects', $Item['object'], 'district');
-        $Item['metro'] = wbCorrelation('objects', $Item['object'], 'metro');
-        $Item['name'] = wbCorrelation('objects', $Item['object'], 'name');
-        $Item['address'] = wbCorrelation('objects', $Item['object'], 'address');
+        $object = wbItemRead('objects', $Item['object']);
 
+        $Item['district'] = $object['district'];
+        $Item['metro'] = $object['metro'];
 
         $Item["image"] = wbGetItemImg($Item);
         if (isset($Item['price'])) {
