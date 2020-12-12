@@ -109,7 +109,7 @@
 						<wb-foreach wb="table=news&limit=1&sort=data:d" wb-filter="{'active':'on','type':'news'}">
 						<div class="thumbnail-angle-one overflow-hidden position-relative bg-secondary pt-50 px-50 pb-100 text-center flat-large icon-primary color-white">
 							<span class="d-block">
-								<img data-src='/thumbc/300x300/src/{{images.0.img}}' class="rounded-circle pc-30" />
+								<img data-src='/thumbc/300x300/src/{{images.0.img}}' width="300" height="300" class="rounded-circle pc-30" />
 							</span>
 							<h4 class="my-30 color-white">{{header}}</h4>
 							<p>{{wbGetWords({{text}},20)}}</p>
@@ -125,7 +125,7 @@
 						<wb-foreach wb="table=news&limit=1&sort=data:d" wb-filter="{'active':'on','type':'article'}">
 						<div class="thumbnail-angle-two overflow-hidden position-relative bg-dark pt-50 px-50 pb-100 mt-md-50 text-center flat-large icon-primary color-white">
 							<span class="d-block">
-								<img data-src='/thumbc/300x300/src/{{images.0.img}}' class="rounded-circle pc-30" />
+								<img data-src='/thumbc/300x300/src/{{images.0.img}}' width="300" height="300" class="rounded-circle pc-30" />
 							</span>
 							<h4 class="my-30 color-white">{{header}}</h4>
 							<p>{{wbGetWords({{text}},20)}}</p>
@@ -189,7 +189,7 @@
 						</div>
 					</div>
 					<div class="position-relative">
-						<img data-src="/thumbc/870x665/src/{{images.0.img}}" alt="{{header}}">
+						<img data-src="/thumbc/870x665/src/{{images.0.img}}" width="879" height="665" alt="{{header}}">
 						<div class="bg-primary position-absolute color-white" style="display: inline-block; width: 180px; height: auto; padding: 40px 20px; bottom: -35px; left: 50px;">
 							<h5 class="color-white">
 								Перейти в каталог
@@ -224,7 +224,7 @@
 					<wb-foreach wb-ajax="/api/query/objects/?active=on&__options=sort=_created:d;limit=4;trigger=beforeItemShow">
 					<div class="property-item">
 							<div class="property-img position-relative overflow-hidden overlay-secondary-4">
-								<img data-src="/thumbc/725x635/src/{{images.0.img}}" alt="image">
+								<img data-src="/thumbc/725x635/src/{{images.0.img}}" width="725" height="635" alt="image">
 								<span class="thum-category category-1 bg-secondary color-white z-index-1 px-15">от {{price_min}}</span>
 								<ul class="hover-option position-absolute icon-white z-index-1">
 									<li>

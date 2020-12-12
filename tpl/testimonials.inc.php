@@ -18,7 +18,7 @@
                                 {{data.text}}
                             </div>
                             <div class="author-info mt-30">
-                                <img src="/thumbc/160x160/src/{{data.avatar.0.img}}" alt="image">
+                                <img data-src="/thumbc/160x160/src/{{data.avatar.0.img}}" alt="image" width="160" height="160">
                                 <div class="author-name">
                                     <h5 class="mb-5 color-primary">{{name}}</h5>
                                 </div>
