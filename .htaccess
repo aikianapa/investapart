@@ -5,6 +5,8 @@ RewriteBase /
 Options +FollowSymLinks
 RewriteEngine On
 
+RewriteRule ^(.*)\.less$ index.php 
+
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 

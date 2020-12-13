@@ -27,7 +27,7 @@
 							<form class="news-letter bg-gray mt-30" id="callback-form" method="post">
 								<div class="form-group position-relative">
 									<input class="form-control" type="text" name="callback" placeholder="{{right.name}}">
-									<button type="button" class="bg-gray color-secondary" data-ajax="/ajax/mail/" ><i class="fa fa-paper-plane"></i></button>
+									<button type="button" class="bg-gray color-secondary" data-ajax="/ajax/mail/" aria-label="send"><i class="fa fa-paper-plane"></i></button>
 								</div>
 								<div class="error-handel position-relative">
 									<div class="p-2" id="success">Ваш запрос успешно отправлен, спасибо.</div>

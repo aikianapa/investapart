@@ -8,7 +8,7 @@
         wbapp.loadStyles([
 			"{{_var.base}}/css/bootstrap.min.css"
 			,"{{_var.base}}/css/style.css"
-			,"{{_var.base}}/css/color.css"
+			,"{{_var.base}}/css/color.less"
 			,"{{_var.base}}/css/custom.css"
 			,"{{_var.base}}/css/font-awesome.min.css"
 			,"{{_var.base}}/css/layerslider.css"

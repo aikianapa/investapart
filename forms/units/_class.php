@@ -47,6 +47,7 @@ class unitsClass extends cmsFormsClass
 
     public function recalc()
     {
+        $app = &$this->app;
         // Пересчёт статистики
         // Вызов через /api/call/units/recalc
 
@@ -98,6 +99,20 @@ class unitsClass extends cmsFormsClass
 
             $item = wbItemRead("admin", "complex_data");
             $item = array_merge($item, $data);
+
+
+            // count objects by districts
+            $item['district_objects'] = [];
+            $objs = $json->collect($objects['list']);
+            $grps = $objs->groupBy('district')->get();
+
+            foreach((array)$grps as $district => $grp) {
+                if ($district > 0) {
+                    $item['district_objects'][] = ['district'=> $district, 'count' => count($grp)];
+                }
+            }
+            $objc = $json->collect($item['district_objects']);
+            $item['district_objects'] = $objs->sortBy('count', 'desc')->get();
             wbItemSave("admin", $item);
         }
         die;
