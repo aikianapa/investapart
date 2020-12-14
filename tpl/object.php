@@ -185,7 +185,7 @@
 											<tbody>
 												<wb-foreach wb="table=units&sort=price:a" wb-filter='{"active":"on" , "object":"{{_var.object}}", "type":"{{id}}"}'>
 													<tr>
-														<td wb-tree="form=objects&item={{_var.object}}&field=buildings">
+														<td wb-tree="form=objects&item={{_var.object}}&field=buildings&branch={{building}}">
 															<wb>{{name}}</wb>
 														</td>
 														<td class="text-center">{{section}}</td>

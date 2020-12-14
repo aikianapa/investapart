@@ -12,7 +12,7 @@ class unitsClass extends cmsFormsClass
         $Item['metro'] = $object['metro'];
         $Item['name'] = $object['name'];
         $Item['address'] =$object['address'];
-
+        !isset($Item['section']) or $Item['section'] == '' ? $Item['section'] = 1 : null;
         return $Item;
     }
 

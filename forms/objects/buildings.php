@@ -16,7 +16,7 @@
 
         <label class="col-6 col-sm-3 form-control-label">{{_lang.sections}}</label>
         <div class="col-6 col-sm-3">
-            <input type="number" class="form-control" name="sections" placeholder="{{_lang.sections}}">
+            <input type="number" class="form-control" name="sections" required value="1" placeholder="{{_lang.sections}}">
         </div>
 
     </div>

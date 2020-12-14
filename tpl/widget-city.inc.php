@@ -21,7 +21,7 @@
 	                                        <h5>
 	                                            <a class="color-white" href="/catalog">{{name}}</a>
 	                                        </h5>
-	                                        <span class="color-gray-light mt-5 d-inline-block">комплексов: {{_var.count}}</span>
+	                                        <span class="color-gray-light mt-5 d-inline-block">район: {{_var.count}}</span>
 	                                    </div>
 	                                </div>
 	                            </div>
@@ -33,7 +33,7 @@
 	                                        <h5>
 	                                            <a class="color-white" href="/catalog">{{name}}</a>
 	                                        </h5>
-	                                        <span class="color-gray-light mt-5 d-inline-block">комплексов: {{_var.count}}</span>
+	                                        <span class="color-gray-light mt-5 d-inline-block">район: {{_var.count}}</span>
 	                                    </div>
 	                                </div>
 	                            </div>
@@ -47,7 +47,7 @@
 	                                <h5>
 	                                    <a class="color-white" href="/catalog">{{name}}</a>
 	                                </h5>
-	                                <span class="color-gray-light mt-5 d-inline-block">комплексов: {{_var.count}}</span>
+	                                <span class="color-gray-light mt-5 d-inline-block">район: {{_var.count}}</span>
 	                            </div>
                             </div>
                             <wb-var count="{{district_objects.3.count}}" />
@@ -57,7 +57,7 @@
 	                                <h5>
 	                                    <a class="color-white" href="/catalog">{{name}}</a>
 	                                </h5>
-	                                <span class="color-gray-light mt-5 d-inline-block">комплексов: {{_var.count}}</span>
+	                                <span class="color-gray-light mt-5 d-inline-block">район: {{_var.count}}</span>
 	                            </div>
 	                        </div>
 
@@ -70,7 +70,7 @@
 	                                <h5>
 	                                    <a class="color-white" href="/catalog">{{name}}</a>
 	                                </h5>
-	                                <span class="color-gray-light mt-5 d-inline-block">комплексов: {{_var.count}}</span>
+	                                <span class="color-gray-light mt-5 d-inline-block">район: {{_var.count}}</span>
 	                            </div>
                             </div>
                             <wb-var count="{{district_objects.5.count}}" />
@@ -80,7 +80,7 @@
 	                                <h5>
 	                                    <a class="color-white" href="/catalog">{{name}}</a>
 	                                </h5>
-	                                <span class="color-gray-light mt-5 d-inline-block">комплексов: {{_var.count}}</span>
+	                                <span class="color-gray-light mt-5 d-inline-block">район: {{_var.count}}</span>
 	                            </div>
 	                        </div>
 	                    </div>

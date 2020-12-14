@@ -35,12 +35,11 @@ function afterItemSave($Item) {
 
 function beforeItemShow(&$Item)
 {
-    if (isset($Item['price_min'])) {
-        $Item['price_min'] = money_format('%.0n', intval($Item['price_min']));
-    }
-    if (isset($Item['price_max'])) {
-        $Item['price_max'] = money_format('%.0n', intval($Item['price_max']));
-    }
+    isset($Item['price_min']) ? $Item['price_min'] = money_format('%.0n', intval($Item['price_min'])) : null;
+    isset($Item['price_max']) ? $Item['price_max'] = money_format('%.0n', intval($Item['price_max'])) : null;
+    
+    if (!isset($Item['section']) OR $Item['section'] == '') $Item['section'] = 1;
+
     return $Item;
 }
 
