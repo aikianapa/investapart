@@ -100,7 +100,6 @@ select::-ms-expand {
 a{
 	cursor: pointer;
 	display: block;
-	font-family: 'Montserrat', sans-serif;
   font-weight: 400;
 }
 a:hover,a:focus,a.active,
@@ -124,7 +123,7 @@ ul li{
 	list-style-type: none;
 }
 h1, h2, h3, h4, h5, h6{
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Roboto', sans-serif;
 	margin-bottom: 0;
 }
 h1, h2{
@@ -1395,7 +1394,7 @@ transform:translateY(7px) rotate(45deg);
   height: 1em;
   position: relative;
   top: 30px;
-  font-family:'Montserrat', sans-serif
+  font-family:'Roboto', sans-serif
 }
 .jslider table {
   width: 100%;
