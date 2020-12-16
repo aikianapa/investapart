@@ -63,7 +63,7 @@
         <div class="col-md-12 col-lg-6 col-xl-4">
             <div class="property-thumbnail mt-30">
                 <div class="property-img position-relative overflow-hidden overlay-secondary-4">
-                    <img src="/thumbc/555x485/src/{{images.0.img}}" width="555" height="485" alt="name">
+                    <img data-src="/thumbc/555x485/src/{{images.0.img}}" width="555" height="485" alt="name">
                     <div class="thumbnail-content z-index-1 color-white-a color-white">
                         <span class="thum-category category-1 bg-secondary color-white z-index-1 px-15" wb-if='"{{price_min}}">""'>от {{price_min}}
                         </span>
