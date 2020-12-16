@@ -83,12 +83,12 @@
     </div>
 </div>
 <div class="row" id="apartList">
-    <wb-foreach wb='table=units&size={{_sett.page_size}}&sort=name&bind=site.apartList'>
+    <wb-foreach wb='table=units&size=12&sort=name&bind=site.apartList' wb-offset="-100" wb-filter="{'active':'on'}">
 
         <div class="col-md-12 col-lg-6 col-xl-4">
             <div class="property-thumbnail mt-30">
                 <div class="property-img position-relative overflow-hidden overlay-secondary-4">
-                    <img data-src="/thumbc/555x485/src/{{images.0.img}}" alt="name">
+                    <img src="/thumbc/555x485/src/{{images.0.img}}" width="555" height="485" alt="name">
                     <div class="thumbnail-content z-index-1 color-white-a color-white">
                         <span class="thum-category category-1 bg-secondary color-white z-index-1 px-15">
                             {{square}} кв.м.
