@@ -116,7 +116,6 @@
                                                     data-ajax="{'url':'/ajax/rmitem/{{_form}}/{{_id}}','update':'cms.list.{{_form}}','html':'.{{_form}}-edit-modal'}">Удалить</a>
                                             </div>
                                         </div>
-
                                     </td>
                                 </tr>
                             </wb-foreach>
