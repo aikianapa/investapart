@@ -10,6 +10,26 @@
 
 
         <form id="{{_form}}EditForm" class="form-horizontal" role="form">
+
+
+        <wb-multiinput name="test">
+
+            <label class="col-sm-3 p-2">{{_lang.name}}</label>
+            <div class="col-sm-9">
+              <div type="text" class="form-control" name="name" placeholder="{{_lang.name}}"
+              wb-module="finder" data-ajax="{'url':'/api/query/pages/','context':'id,header','return':'id,header'}">
+              <div>{{id}} {{header}}</div>
+              </div>
+            </div>
+
+        </wb-multiinput>
+
+                      <div type="text" class="form-control" name="test1" placeholder="{{_lang.name}}"
+              wb-module="finder" data-ajax="{'url':'/api/query/pages/','context':'id,header','return':'id,header'}">
+              <div>{{id}} {{header}}</div>
+              </div>
+
+
           <div class="form-group row">
             <label class="col-sm-3 form-control-label">{{_lang.name}}</label>
             <div class="col-sm-9">

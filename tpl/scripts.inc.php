@@ -1,10 +1,9 @@
 <html>
 
-<script src="/engine/js/jquery.min.js"></script>
 <script src="/engine/js/wbapp.js"></script>
 
-<script>
-    $(document).on('wbapp-go', function() {
+<script type="wbapp">
+
         wbapp.loadStyles([
 			"{{_var.base}}/css/bootstrap.min.css"
 			,"{{_var.base}}/css/style.css"
@@ -36,7 +35,7 @@
 		], 'scripts-ready', function() {
             custom_init();
 		});
-    });
+    
 
 
 
