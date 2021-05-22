@@ -597,6 +597,7 @@
         }
         
     });
+	var filtersInit = function() {
 	// Pricing bar Filter
 	//----------------------------------------------------------------------------------
 	$(".filter_price").slider({ 
@@ -639,6 +640,8 @@
 		});
 	})
 
+	}
+
 	//  Star Rating Creator
 	//----------------------------------------------------------------------------------
 	function ratingEnable() {
@@ -659,6 +662,8 @@
 			} else {
 				$(data.form).find('.error-handel #success').show();
 			}
+		} else if (substr('rendertpl/list_',data.url)) {
+			filtersInit();
 		}
 	})
 

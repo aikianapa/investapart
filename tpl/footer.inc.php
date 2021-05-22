@@ -7,7 +7,7 @@
 		<div class="row">
 			<div class="col-sm-4 col-md-4 col-lg-6">
 				<div class="footer-logo"><a href="/">
-                <img src="/thumbc/200x45/src/{{_sett.logo.0.img}}" alt="{{_sett.header}}">
+                <img src="/thumb/200x45/src/{{_sett.logo.0.img}}" alt="{{_sett.header}}">
                 </div>
 			</div>
 			<div class="col-sm-8 col-md-8 col-lg-6">
@@ -29,7 +29,7 @@
 			<hr class="border-bottom-1 w-100 m-0">
 			<div class="col-md-12 col-lg-12">
 				<div class="py-15 text-center">
-					ИнвестАпарт @ 2020. {{_sett.slogan}}
+					{{_sett.logo1}}{{_sett.logo2}} @ {{date("Y")}}. {{_sett.slogan}}
 				</div>
 			</div>
 		</div>

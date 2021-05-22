@@ -33,6 +33,10 @@ function afterItemSave($Item) {
         $this->app->shadow('/api/call/units/recalc');
 }
 
+function beforeItemFilter(&$Item) {
+    $Item['price_max'] = $Item['price_min'];
+}
+
 function beforeItemShow(&$Item)
 {
     isset($Item['price_min']) ? $Item['price_min'] = money_format('%.0n', intval($Item['price_min'])) : null;
@@ -42,6 +46,7 @@ function beforeItemShow(&$Item)
 
     return $Item;
 }
+
 
 function beforeItemSave(&$Item)
 {
