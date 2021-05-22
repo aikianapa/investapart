@@ -2,7 +2,7 @@
 
 <script src="/engine/js/wbapp.js"></script>
 
-<script type="wbapp">
+<script wb-app>
 
         wbapp.loadStyles([
 			"{{_var.base}}/css/bootstrap.min.css"
@@ -15,7 +15,6 @@
 			,"{{_var.base}}/fonts/flaticon/flaticon.css"
 			,"https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
 			,"https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap"
-			
 
 		], 'styles-ready');
         wbapp.loadScripts([

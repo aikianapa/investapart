@@ -161,9 +161,9 @@
 					</a>
 
 				</div>
-					<wb-jq wb="	$dom->find('ul')->addClass('list-half icon-primary my-20 d-table');
-								$dom->find('ul li')->prepend('<i></i>');
-								$dom->find('ul li i')->addClass('fa fa-check');" />
+					<wb-jq wb="	$dom->find('#home1 ul')->addClass('list-half icon-primary my-20 d-table');
+								$dom->find('#home1 ul li')->prepend('<i></i>');
+								$dom->find('#home1 ul li i')->addClass('fa fa-check');" />
 
 				<div class="col-md-12 col-lg-5 col-xl-6">
 					<div class="fact-counter achievement mb-50">
