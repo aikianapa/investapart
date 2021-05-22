@@ -2,7 +2,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-light px-0">
     <a class="navbar-brand" href="/">
-        <img src="/thumbc/200x45/src/{{_sett.logo.0.img}}" alt="{{_sett.header}}">
+        <img src="/thumb/200x45/src/{{_sett.logo.0.img}}" alt="{{_sett.header}}">
     </a>
     <button class="toggle-btn" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
